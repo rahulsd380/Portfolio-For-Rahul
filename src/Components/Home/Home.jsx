@@ -1,9 +1,14 @@
+import AboutMe from "../AboutMe/AboutMe";
+import Hero from "../Hero/Hero";
+import ShortResume from "../ShortResume/ShortResume";
 
 
 const Home = () => {
     return (
         <div>
-            <h1 className="">Home</h1>
+            <Hero/>
+            <AboutMe/>
+            <ShortResume/>
         </div>
     );
 };

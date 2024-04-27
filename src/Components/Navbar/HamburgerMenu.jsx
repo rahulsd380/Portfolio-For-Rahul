@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import hamburger from "../../assets/Icons/hamburger menu.svg";
 import leftArrow from "../../assets/Icons/left-arrow.svg";
-import ToggleBtn from "./ToggleBtn";
 import sun from "../../assets/Icons/sun.svg";
 import moon from "../../assets/Icons/moon.svg";
 
