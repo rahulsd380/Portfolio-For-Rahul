@@ -59,12 +59,16 @@ const Hero = () => {
           dolore{" "}
         </p>
 
-        <Link onClick={navigateToTalk} className="bg-gradient-to-br from-blue-500 to-indigo-800 py-3 px-8 font-Poppins text-white rounded-[10px] flex items-center gap-2">
+        {/* <Link onClick={navigateToTalk} className="bg-gradient-to-br from-blue-500 to-indigo-800 py-3 px-8 font-Poppins text-white rounded-[10px] flex items-center gap-2">
           <div className="">
           Let’s Talk Us
           <img className="w-5" src={talk} alt="" />
           </div>
-        </Link>
+        </Link> */}
+        <button className="bg-gradient-to-br from-blue-500 to-indigo-800 py-3 px-8 font-Poppins text-white rounded-[10px] flex items-center gap-2">
+          Let’s Talk Us
+          <img className="w-5" src={talk} alt="" />
+        </button>
       </div>
 
       <img className="w-[500px] lg:w-[420px]" src={img} alt="" />
