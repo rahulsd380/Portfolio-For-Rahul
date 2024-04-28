@@ -1,8 +1,37 @@
 import img from "../../assets/Images/Photo.png";
 import e1 from "../../assets/Images/E 1.svg";
 import e2 from "../../assets/Images/E 2.png";
+import talk from "../../assets/Icons/New folder/talk.svg"
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import TextTransition, { presets } from 'react-text-transition';
+import { useEffect, useState } from "react";
+
+const TEXTS = ['FULL-STACK WEB DEVELOPER', 'FRONT-END WEB DEVELOPER', 'MERN-STACK WEB DEVELOPER'];
 
 const Hero = () => {
+  const [index, setIndex] = useState(0);
+
+  useEffect(() => {
+    const intervalId = setInterval(
+      () => setIndex((index) => index + 1),
+      3000,
+    );
+    return () => clearTimeout(intervalId);
+  }, []);
+
+
+  const navigate = useNavigate();
+  const navigateToTalk = () => {
+    navigate("/");
+  
+    // Delay scrolling for 100 milliseconds (adjust as needed)
+    setTimeout(() => {
+      const contactMe = document.getElementById("contact-me");
+      contactMe?.scrollIntoView({ behavior: "smooth" });
+    }, 100);
+  }
+
+
   return (
     <div
       id="home"
@@ -14,7 +43,9 @@ const Hero = () => {
 
       <div className="">
         <p className="text-[#939393] font-Poppins text-[35px] font-normal mb-8">
-          FULL-STACK WEB DEVELOPER
+        
+        <TextTransition springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}
+        </TextTransition>
         </p>
         <p className="text-[#0294E8] font-Poppins text-sm md:text-[22px] font-semibold">
           Hello, I’m
@@ -28,16 +59,19 @@ const Hero = () => {
           dolore{" "}
         </p>
 
-        <button className="bg-gradient-to-br from-blue-500 to-indigo-800 py-3 px-8 font-Poppins text-white rounded-[10px]">
+        <Link onClick={navigateToTalk} className="bg-gradient-to-br from-blue-500 to-indigo-800 py-3 px-8 font-Poppins text-white rounded-[10px] flex items-center gap-2">
+          <div className="">
           Let’s Talk Us
-        </button>
+          <img className="w-5" src={talk} alt="" />
+          </div>
+        </Link>
       </div>
 
       <img className="w-[500px] lg:w-[420px]" src={img} alt="" />
 
-      <div className="absolute -right-24 -top-10 ">
+      {/* <div className="absolute -right-24 -top-10 ">
         <img src={e2} alt="" />
-      </div>
+      </div> */}
     </div>
   );
 };

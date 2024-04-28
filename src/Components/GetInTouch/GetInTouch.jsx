@@ -3,7 +3,7 @@ import Form from "./Form";
 
 const GetInTouch = () => {
   return (
-    <div className="max-w-6xl mx-auto mt-[80px] px-3 xl:px-0">
+    <div id="contact-me" className="max-w-6xl mx-auto mt-[80px] px-3 xl:px-0">
       <div>
         <p className="text-white font-Poppins mb-5 text-center">Contact</p>
 

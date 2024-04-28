@@ -1,6 +1,7 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import HamburgerMenu from "./HamburgerMenu";
 import ToggleBtn from "./ToggleBtn";
+import downloadIcon from "../../assets/Icons/New folder/download.svg"
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -70,9 +71,10 @@ const Navbar = () => {
           <a
             href="/src/assets/Resume_of_Rahul Sutradhar.pdf"
             download
-            className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-[4px] sm:px-3 md:px-8 text-xs sm:text-base text-white rounded sm:rounded-[10px]"
+            className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-[4px] sm:px-3 md:px-8 text-xs sm:text-base text-white rounded sm:rounded-[10px] flex items-center gap-2"
           >
             Download Resume
+            <img className="w-5 animate-pulse" src={downloadIcon} alt="" />
           </a>
 
           <div className="block lg:hidden">
