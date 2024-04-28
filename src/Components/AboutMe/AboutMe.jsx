@@ -3,7 +3,7 @@ import arrow from "../../assets/Images/arrowImg.png"
 
 const AboutMe = () => {
     return (
-        <div className="max-w-6xl mx-auto mt-[80px] px-3 xl:px-0">
+        <div id="about-me" className="max-w-6xl mx-auto mt-[80px] px-3 xl:px-0">
             <div className="relative flex flex-col lg:flex-row items-center gap-10">
 
             <div className="hidden lg:block w-[400px] h-[400px] rounded-full bg-[#0696E7]/50 bg-opacity-30 blur-[100px] absolute top-[50px] left-2"></div>

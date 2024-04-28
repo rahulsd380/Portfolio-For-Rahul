@@ -52,19 +52,19 @@ const ShortResume = () => {
 
                 <div 
                 onClick={() => setActiveTab("Professional Skills")} 
-                className={`${activeTab === "Professional Skills" ? "bg-[#0696E7]" : "bg-none"} cursor-pointer rounded-[78px] h-[72px] flex justify-center items-center text-white font-Poppins text-xl w-full`}>
+                className={`${activeTab === "Professional Skills" ? "bg-[#0696E7]" : "bg-none"} cursor-pointer rounded-[78px] h-[72px] flex justify-center items-center text-white font-Poppins text-xs md:text-xl w-full`}>
                 Professional Skills
                 </div>
 
                 <div 
                 onClick={() => setActiveTab("Education")} 
-                className={`${activeTab === "Education" ? "bg-[#0696E7]" : "bg-none"} cursor-pointer rounded-[78px] h-[72px] flex justify-center items-center text-white font-Poppins text-xl w-full`}>
+                className={`${activeTab === "Education" ? "bg-[#0696E7]" : "bg-none"} cursor-pointer rounded-[78px] h-[72px] flex justify-center items-center text-white font-Poppins text-xs md:text-xl w-full`}>
                 Education
                 </div>
 
                 <div 
                 onClick={() => setActiveTab("Achievements")} 
-                className={`${activeTab === "Achievements" ? "bg-[#0696E7]" : "bg-none"} cursor-pointer rounded-[78px] h-[72px] flex justify-center items-center text-white font-Poppins text-xl w-full`}>
+                className={`${activeTab === "Achievements" ? "bg-[#0696E7]" : "bg-none"} cursor-pointer rounded-[78px] h-[72px] flex justify-center items-center text-white font-Poppins text-xs md:text-xl w-full`}>
                 Achievements
                 </div>
 
