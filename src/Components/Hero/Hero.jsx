@@ -52,6 +52,8 @@ const Hero = () => {
         <TextTransition springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}
         </TextTransition>
         </p>
+
+        
         <p className="text-[#0294E8] font-Poppins text-sm md:text-[22px] font-semibold mt-2">
           Hello, I’m
         </p>
