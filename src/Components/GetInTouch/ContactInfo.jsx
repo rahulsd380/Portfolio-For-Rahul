@@ -7,7 +7,7 @@ const ContactInfo = () => {
     <div className="flex flex-col gap-7">
       <div className="flex flex-col gap-3">
         <h1 className="text-[#0696E7] font-Montserrat text-[20px] font-bold flex items-center gap-2">
-            <img className="w-5" src={location} alt="" />
+          <img className="w-5" src={location} alt="" />
           My Location
         </h1>
 
@@ -19,12 +19,12 @@ const ContactInfo = () => {
       </div>
       <div className="flex flex-col gap-3">
         <h1 className="text-[#0696E7] font-Montserrat text-[20px] font-bold flex items-center gap-2">
-        <img className="w-5" src={phone} alt="" />
+          <img className="w-5" src={phone} alt="" />
           Contact Number
         </h1>
 
         <p className="text-white font-Poppins text-[14px]">
-          <p>+880 1608249337</p> 
+          <p>+880 1608249337</p>
           <p>+880 1306591485</p>
         </p>
 
@@ -32,12 +32,12 @@ const ContactInfo = () => {
       </div>
       <div className="flex flex-col gap-3">
         <h1 className="text-[#0696E7] font-Montserrat text-[20px] font-bold flex items-center gap-2">
-        <img className="w-5" src={email} alt="" />
+          <img className="w-5" src={email} alt="" />
           Say Hello
         </h1>
 
         <p className="text-white font-Poppins text-[14px]">
-          <p>rahulsd380@gmail.com</p> 
+          <p>rahulsd380@gmail.com</p>
           <p>rahulsd836@gmail.com</p>
         </p>
 

@@ -1,5 +1,6 @@
 import AboutMe from "../AboutMe/AboutMe";
 import Blogs from "../Blogs/Blogs";
+import Footer from "../Footer/Footer";
 import GetInTouch from "../GetInTouch/GetInTouch";
 import Hero from "../Hero/Hero";
 import MyServices from "../MyServices/MyServices";
@@ -20,6 +21,7 @@ const Home = () => {
             {/* testimonials */}
             <Blogs/>
             <GetInTouch/>
+            <Footer/>
         </div>
     );
 };
