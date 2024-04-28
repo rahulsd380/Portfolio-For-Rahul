@@ -2,6 +2,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import HamburgerMenu from "./HamburgerMenu";
 import ToggleBtn from "./ToggleBtn";
 import downloadIcon from "../../assets/Icons/New folder/download.svg"
+import Ripples from 'react-ripples'
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -46,7 +47,6 @@ const Navbar = () => {
       },
     },
   ];
-
   return (
     <div className="bg-[#0E1330] border-b border-[#282D45] px-3 xl:px-0 py-3 w-full sticky z-20 top-0">
       <div className="max-w-6xl mx-auto flex items-center justify-between font-Lato text-lg">
@@ -68,14 +68,18 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
           <ToggleBtn />
 
+          <Ripples during={1500}>
           <a
             href="/src/assets/Resume_of_Rahul Sutradhar.pdf"
             download
-            className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-[4px] sm:px-3 md:px-8 text-xs sm:text-base text-white rounded sm:rounded-[10px] flex items-center gap-2"
+            className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-[4px] sm:px-3 md:px-8 text-xs sm:text-base text-white rounded sm:rounded-[10px] flex items-center gap-2 animate-ripple relative tracking-wider overflow-hidden"
           >
             Download Resume
             <img className="w-5 animate-pulse" src={downloadIcon} alt="" />
           </a>
+          </Ripples>
+
+          
 
           <div className="block lg:hidden">
             <HamburgerMenu />

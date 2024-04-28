@@ -5,6 +5,7 @@ import talk from "../../assets/Icons/New folder/talk.svg"
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import TextTransition, { presets } from 'react-text-transition';
 import { useEffect, useState } from "react";
+import  Ripples  from 'react-ripples';
 
 const TEXTS = ['FULL-STACK WEB DEVELOPER', 'FRONT-END WEB DEVELOPER', 'MERN-STACK WEB DEVELOPER'];
 
@@ -65,10 +66,14 @@ const Hero = () => {
           <img className="w-5" src={talk} alt="" />
           </div>
         </Link> */}
-        <button className="bg-gradient-to-br from-blue-500 to-indigo-800 py-3 px-8 font-Poppins text-white rounded-[10px] flex items-center gap-2">
+
+<Ripples during={1500}>
+<button className="bg-gradient-to-br from-blue-500 to-indigo-800 py-3 px-8 font-Poppins text-white rounded-[10px] flex items-center gap-2">
           Let’s Talk Us
           <img className="w-5" src={talk} alt="" />
         </button>
+</Ripples>
+        
       </div>
 
       <img className="w-[500px] lg:w-[420px]" src={img} alt="" />

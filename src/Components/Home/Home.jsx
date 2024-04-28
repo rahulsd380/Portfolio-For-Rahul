@@ -1,4 +1,5 @@
 import AboutMe from "../AboutMe/AboutMe";
+import AnimCursor from "../AnimCursor/AnimCursor";
 import Blogs from "../Blogs/Blogs";
 import Footer from "../Footer/Footer";
 import GetInTouch from "../GetInTouch/GetInTouch";
@@ -12,6 +13,7 @@ const Home = () => {
     return (
         <div>
             <div className="">
+                <AnimCursor/>
             <Hero/>
             </div>
             <AboutMe/>

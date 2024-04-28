@@ -1,5 +1,6 @@
 import aboutMe from "../../assets/Images/about me.png"
 import arrow from "../../assets/Images/arrowImg.png"
+import Ripples from 'react-ripples'
 
 const AboutMe = () => {
     return (
@@ -17,9 +18,12 @@ const AboutMe = () => {
                 <p className="text-[#939393] font-Poppins text-[12px] md:text-[18px] font-normal mt-4 mb-8">With a track record of creating intuitive, visually stunning interfaces and a passion for user-centered design. My expertise in user research and testing ensures my designs meet the needs of the target audience. I am a team player and skilled in communicating design decisions to stakeholders. My experience spans mobile apps and web applications, with a goal of delivering seamless user experiences.</p>
 
                 <div className="flex items-center relative">
+                <Ripples during={1500}>
                 <a href="/src/assets/Resume_of_Rahul Sutradhar.pdf" download className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-[4px] sm:px-3 md:px-8 text-xs sm:text-base text-white rounded sm:rounded-[10px]">
           Download Resume
         </a>
+                </Ripples>
+                
         <img className="absolute mt-0 lg:mt-3 left-[110px] sm:left-[160px] mobileLg:left-[180px] md:left-[200px] -top-[70px] md:-top-[110px] w-36 md:w-[230px]" src={arrow} alt="" />
                 </div>
 

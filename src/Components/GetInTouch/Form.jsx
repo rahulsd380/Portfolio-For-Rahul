@@ -1,3 +1,5 @@
+import Ripples from 'react-ripples'
+
 const Form = () => {
   return (
     <div className="w-full flex flex-col gap-7">
@@ -27,9 +29,12 @@ const Form = () => {
       ></textarea>
 
       <div className="flex justify-center md:justify-end">
-        <button className="w-full md:w-[190px] bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-5 text-xs sm:text-base text-white rounded sm:rounded-[7px] flex justify-center items-center transition duration-300 transform hover:-translate-y-0.5">
+      <Ripples during={1500}>
+      <button className="w-full md:w-[190px] bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-5 text-xs sm:text-base text-white rounded sm:rounded-[7px] flex justify-center items-center transition duration-300 transform hover:-translate-y-0.5">
           Send Message
         </button>
+      </Ripples>
+        
       </div>
     </div>
   );

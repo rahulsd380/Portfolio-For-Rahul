@@ -5,6 +5,7 @@ import img4 from "../../assets/Images/Project Cover.png";
 import view from "../../assets/Icons/Skills/view.svg";
 import github from "../../assets/Icons/Skills/github.svg";
 import { Link } from "react-router-dom";
+import Ripples from 'react-ripples'
 
 const ProjectCard = () => {
     const projectsDetails = [
@@ -66,12 +67,15 @@ const ProjectCard = () => {
                             
                         </Link>
 
-
-                <Link to={`/${detail?.liveLink}`} className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-5 text-xs sm:text-base text-white rounded sm:rounded-[7px] flex items-center gap-2 transition duration-300 transform hover:-translate-y-0.5">
+                        <Ripples during={1500}>
+                        <Link to={`/${detail?.liveLink}`} className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-5 text-xs sm:text-base text-white rounded sm:rounded-[7px] flex items-center gap-2 transition duration-300 transform hover:-translate-y-0.5">
                 VIew Project
           
         <img src={view} alt="" />
         </Link>
+                        </Ripples>
+
+                
                 </div>
 
                 {/* <div className="w-full h-[1px] bg-gradient-to-br from-blue-500 to-indigo-800"></div> */}
