@@ -53,6 +53,8 @@ const MyServices = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8 mt-[90px]">
           {serviceInfo.map((info, index) => (
             <div
+            data-aos="fade-up" 
+                    data-aos-duration="2000"
               key={index}
               className="bg-[#0E1330] border border-[#282D45] w-full mobileLg:w-[365px] h-[225px] rounded-[20px] flex flex-col gap-[18px] justify-center items-center relative mb-16"
             >

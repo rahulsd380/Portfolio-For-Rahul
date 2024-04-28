@@ -2,7 +2,7 @@ import Ripples from 'react-ripples'
 
 const Form = () => {
   return (
-    <div className="w-full flex flex-col gap-7">
+    <div data-aos="fade-up-left" data-aos-duration="1000" className="w-full flex flex-col gap-7">
       <div className="flex flex-col md:flex-row items-center gap-[30px] w-full">
         <input
           placeholder="Name*"

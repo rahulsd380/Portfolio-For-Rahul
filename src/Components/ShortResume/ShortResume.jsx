@@ -73,17 +73,18 @@ const ShortResume = () => {
 
            {
             activeTab === "Professional Skills" &&
-            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-12">
 
-            {
-                skills.map((skill, index) => 
-                <div key={index} className="w-[244px] h-[244px] bg-[#0E1330] border border-[#282D45] rounded-[20px] flex flex-col justify-center items-center gap-7 mb-9">
-                <img src={skill?.img} alt="" />
-                <h1 className="text-white font-Poppins text-2xl font-semibold text-center">{skill.title}</h1>
-            </div>
-            )
-            }
-            </div>
+{
+    skills.map((skill, index) => 
+    <div data-aos="fade-up" 
+    data-aos-duration="2000" key={index} className="w-full mobileLg:w-[244px] h-[244px] bg-[#0E1330] border border-[#282D45] rounded-[20px] flex flex-col justify-center items-center gap-7 mb-9">
+    <img src={skill?.img} alt="" />
+    <h1 className="text-white font-Poppins text-2xl font-semibold text-center">{skill.title}</h1>
+</div>
+)
+}
+</div>
            }
 
 

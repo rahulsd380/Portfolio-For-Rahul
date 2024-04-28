@@ -6,6 +6,7 @@ import { Link, NavLink, useNavigate } from "react-router-dom";
 import TextTransition, { presets } from 'react-text-transition';
 import { useEffect, useState } from "react";
 import  Ripples  from 'react-ripples';
+import 'aos/dist/aos.css';
 
 const TEXTS = ['FULL-STACK WEB DEVELOPER', 'FRONT-END WEB DEVELOPER', 'MERN-STACK WEB DEVELOPER'];
 
@@ -42,16 +43,19 @@ const Hero = () => {
         <img src={e1} alt="" />
       </div>
 
-      <div className="">
+      <div 
+      data-aos="fade-right" 
+      data-aos-duration="2000"
+      className="">
         <p className="text-[#939393] font-Poppins text-[35px] font-normal mb-8">
         
         <TextTransition springConfig={presets.wobbly}>{TEXTS[index % TEXTS.length]}
         </TextTransition>
         </p>
-        <p className="text-[#0294E8] font-Poppins text-sm md:text-[22px] font-semibold">
+        <p className="text-[#0294E8] font-Poppins text-sm md:text-[22px] font-semibold mt-2">
           Hello, I’m
         </p>
-        <h1 className="text-white font-Montserrat text-5xl md:text-[70px] font-semibold leading-[60px] md:leading-[80px]">
+        <h1 className="text-white font-Montserrat text-5xl md:text-[70px] font-semibold leading-[60px] md:leading-[80px] mt-1">
           Rahul Sutradhar{" "}
         </h1>
         <p className="text-[#939393] font-Poppins text-[12px] md:text-[18px] font-normal mt-4 mb-8">
@@ -76,7 +80,10 @@ const Hero = () => {
         
       </div>
 
-      <img className="w-[500px] lg:w-[420px]" src={img} alt="" />
+      <img 
+      data-aos="fade-left" 
+      data-aos-duration="2000"
+      className="w-[500px] lg:w-[420px]" src={img} alt="" />
 
       {/* <div className="absolute -right-24 -top-10 ">
         <img src={e2} alt="" />

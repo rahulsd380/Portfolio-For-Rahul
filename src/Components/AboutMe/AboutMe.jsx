@@ -9,9 +9,11 @@ const AboutMe = () => {
 
             <div className="hidden lg:block w-[400px] h-[400px] rounded-full bg-[#0696E7]/50 bg-opacity-30 blur-[100px] absolute top-[50px] left-2"></div>
 
-                <img className="z-10" src={aboutMe} alt="" />
+                <img data-aos="fade-up" 
+      data-aos-duration="2000" className="z-10" src={aboutMe} alt="" />
 
-                <div>
+                <div data-aos="fade-down" 
+      data-aos-duration="2000">
                 <p className="text-[#0294E8] font-Poppins text-sm md:text-[22px] font-semibold">About me</p>
                 <h1 className="text-white font-Montserrat text-xl md:text-[50px] font-semibold leading-[30px] md:leading-[60px]">I’ am Rahul, unique work provider client </h1>
 

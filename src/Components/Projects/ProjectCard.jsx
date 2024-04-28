@@ -47,7 +47,11 @@ const ProjectCard = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
                 {
                     projectsDetails.map((detail, index) => 
-                    <div key={index} className="flex flex-col gap-6">
+                    <div 
+                    data-aos="fade-up" 
+                    data-aos-duration="2000"
+                     key={index} 
+                     className="flex flex-col gap-6">
                     <h1><span className="text-white font-Montserrat text-xl font-semibold">{detail?.title} - </span> - 
                     <span className="text-gray-300 font-Poppins text-base font-normal">{detail?.subTitle}</span></h1>
 

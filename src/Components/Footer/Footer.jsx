@@ -5,7 +5,7 @@ import whatsapp from "../../assets/Icons/Social Icons/whatsapp.svg";
 
 const Footer = () => {
   return (
-    <div className="mt-[80px] bg-[#0E1330] border-t-2 border-[#282D45]">
+    <div className="mt-[80px] bg-[#0E1330] border-t-2 border-[#282D45] overflow-hidden">
       <div className="max-w-6xl mx-auto px-3 xl:px-0 flex flex-col gap-9 py-10">
         
         

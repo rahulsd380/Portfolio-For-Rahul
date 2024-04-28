@@ -12,10 +12,8 @@ import ShortResume from "../ShortResume/ShortResume";
 const Home = () => {
     return (
         <div>
-            <div className="">
                 <AnimCursor/>
             <Hero/>
-            </div>
             <AboutMe/>
             <ShortResume/>
             <Projects/>

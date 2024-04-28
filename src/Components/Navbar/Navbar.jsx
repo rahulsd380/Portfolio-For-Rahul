@@ -72,9 +72,9 @@ const Navbar = () => {
           <a
             href="/src/assets/Resume_of_Rahul Sutradhar.pdf"
             download
-            className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-[4px] sm:px-3 md:px-8 text-xs sm:text-base text-white rounded sm:rounded-[10px] flex items-center gap-2 animate-ripple relative tracking-wider overflow-hidden"
+            className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-1 mobileLg:px-3  sm:text-base text-white rounded sm:rounded-[10px] flex items-center gap-2"
           >
-            Download Resume
+            <span className="text-xs mobileLg:text-base">Download Resume</span>
             <img className="w-5 animate-pulse" src={downloadIcon} alt="" />
           </a>
           </Ripples>
