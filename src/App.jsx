@@ -3,9 +3,11 @@ import './App.css'
 
 function App() {
 
+  
+
   return (
     <>
-      <AnimatedCursor
+        <AnimatedCursor
       innerSize={8}
       outerSize={8}
       color='193, 11, 111'
