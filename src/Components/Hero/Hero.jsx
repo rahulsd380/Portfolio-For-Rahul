@@ -61,9 +61,7 @@ const Hero = () => {
           Rahul Sutradhar{" "}
         </h1>
         <p className="text-[#939393] font-Poppins text-[12px] md:text-[18px] font-normal mt-4 mb-8">
-          I'm a full-stack web developer and, sed do eiusmod tempor incididunt
-          ut labore et dolore magnaed do eiusmod tempor incididunt ut labore et
-          dolore{" "}
+        Experienced MERN full stack developer adept at crafting robust web applications with a focus on scalability and user experience.
         </p>
 
         {/* <Link onClick={navigateToTalk} className="bg-gradient-to-br from-blue-500 to-indigo-800 py-3 px-8 font-Poppins text-white rounded-[10px] flex items-center gap-2">

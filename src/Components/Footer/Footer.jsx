@@ -2,6 +2,7 @@ import linkedin from "../../assets/Icons/Social Icons/linkedin.svg";
 import facebook from "../../assets/Icons/Social Icons/facebook.svg";
 import twitter from "../../assets/Icons/Social Icons/twitter.svg";
 import whatsapp from "../../assets/Icons/Social Icons/whatsapp.svg";
+import github from "../../assets/Icons/Skills/github.svg";
 
 const Footer = () => {
   return (
@@ -76,6 +77,11 @@ const Footer = () => {
             <a href="https://wa.me/8801608249337" target="_blank">
             <img className="w-6 cursor-pointer transition duration-300 transform hover:-translate-y-0.5" src={whatsapp} alt="" />
             </a>
+            <a href="https://github.com/rahulsd380" target="_blank">
+            <img className="w-7 cursor-pointer transition duration-300 transform hover:-translate-y-0.5" src={github} alt="" />
+            </a>
+
+
           </div>
         </div>
 

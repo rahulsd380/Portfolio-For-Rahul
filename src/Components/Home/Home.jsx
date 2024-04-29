@@ -10,6 +10,7 @@ import Projects from "../Projects/Projects";
 import ShortResume from "../ShortResume/ShortResume";
 import PreLoader from "../PreLoader/PreLoader";
 import Navbar from "../Navbar/Navbar";
+import Testimonials from "../Testimonials/Testimonials";
 
 
 const Home = () => {
@@ -36,7 +37,7 @@ const Home = () => {
             <ShortResume/>
             <Projects/>
             <MyServices/>
-            {/* testimonials */}
+            <Testimonials/>
             <Blogs/>
             <GetInTouch/>
             <Footer/>
