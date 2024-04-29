@@ -40,7 +40,7 @@ const TestimonialsCard = () => {
 </div>
                 }
 
-                <div className="flex items-center gap-8 mt-8">
+                <div className="flex items-center gap-5 mt-8">
                     <img src={detail?.clientImg} alt="" />
                     <div>
                     <h1 className="text-[#0696E7] font-Montserrat text-2xl font-semibold text-center">{detail?.clientName}</h1>

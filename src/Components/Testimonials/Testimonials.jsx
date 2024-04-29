@@ -6,7 +6,10 @@ import Ripples from 'react-ripples'
 
 const Testimonials = () => {
     return (
-        <div className="mt-[80px] bg-[#0E1330] py-[100px]">
+        <div className="mt-[80px] bg-[#0E1330] py-[100px] relative">
+
+<div className="hidden lg:block w-[400px] h-[400px] rounded-full bg-[#0696e799] bg-opacity-30 blur-[250px] absolute top-[50px] left-2"></div>
+
 
             <div className="">
             <p className="text-white font-Poppins mb-5 text-center">
