@@ -13,9 +13,6 @@ const GetInTouch = () => {
 
         <div className="flex flex-col md:flex-row gap-16">
           <ContactInfo />
-
-          {/* Form */}
-
           <Form />
         </div>
       </div>

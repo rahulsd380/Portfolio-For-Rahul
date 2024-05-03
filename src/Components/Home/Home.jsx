@@ -11,40 +11,38 @@ import ShortResume from "../ShortResume/ShortResume";
 import PreLoader from "../PreLoader/PreLoader";
 import Navbar from "../Navbar/Navbar";
 import Testimonials from "../Testimonials/Testimonials";
-
+import InfoCard from "../InfoCard/InfoCard";
 
 const Home = () => {
+  const [isLoading, setISLoading] = useState(true);
+  useEffect(() => {
+    setTimeout(() => {
+      setISLoading(false);
+    }, 3000);
+  }, []);
 
-    const [isLoading, setISLoading] = useState(true);
-    useEffect(() => {
-      setTimeout(() => {
-        setISLoading(false)
-      },3000)
-    },[])
-
-
-    return (
-        <>
-        {
-            isLoading ? 
-            <PreLoader/>
-            :
-            <div>
-                <AnimCursor/>
-                <Navbar/>
-            <Hero/>
-            <AboutMe/>
-            <ShortResume/>
-            <Projects/>
-            <MyServices/>
-            <Testimonials/>
-            <Blogs/>
-            <GetInTouch/>
-            <Footer/>
+  return (
+    <>
+      {isLoading ? (
+        <PreLoader />
+      ) : (
+        <div>
+          <AnimCursor />
+          <Navbar />
+          <Hero />
+          <InfoCard />
+          <AboutMe />
+          <ShortResume />
+          <Projects />
+          <MyServices />
+          <Testimonials />
+          <Blogs />
+          <GetInTouch />
+          <Footer />
         </div>
-        }
-        </>
-    );
+      )}
+    </>
+  );
 };
 
 export default Home;

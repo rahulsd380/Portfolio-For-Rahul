@@ -1,10 +1,10 @@
 import location from "../../assets/Icons/New folder/location.svg";
-import phone from "../../assets/Icons/New folder/phone.svg";
+import phone from "../../assets/Icons/New folder/call.svg";
 import email from "../../assets/Icons/New folder/email.svg";
 
 const ContactInfo = () => {
   return (
-    <div data-aos="fade-right" data-aos-duration="1000" className="flex flex-col gap-7">
+    <div className="flex flex-col gap-7">
       <div className="flex flex-col gap-3">
         <h1 className="text-[#0696E7] font-Montserrat text-[20px] font-bold flex items-center gap-2">
           <img className="w-5" src={location} alt="" />
