@@ -2,24 +2,22 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import hamburger from "../../assets/Icons/hamburger menu.svg";
 import leftArrow from "../../assets/Icons/left-arrow.svg";
-import sun from "../../assets/Icons/sun.svg";
-import moon from "../../assets/Icons/moon.svg";
 
 const HamburgerMenu = () => {
-    const [isLightMode, setLightMode] = useState(false)
-  const [isDarkMode, setDarkMode] = useState(true)
+  //   const [isLightMode, setLightMode] = useState(false)
+  // const [isDarkMode, setDarkMode] = useState(true)
 
-  const handleLightToggle = () => {
-    setLightMode(!isLightMode)
-    setDarkMode(false)
-    setLightMode(true)
-  }
+  // const handleLightToggle = () => {
+  //   setLightMode(!isLightMode)
+  //   setDarkMode(false)
+  //   setLightMode(true)
+  // }
 
-  const handleDarkToggle = () => {
-    setDarkMode(!isDarkMode)
-    setLightMode(false)
-    setDarkMode(true)
-  }
+  // const handleDarkToggle = () => {
+  //   setDarkMode(!isDarkMode)
+  //   setLightMode(false)
+  //   setDarkMode(true)
+  // }
 
   const navlinks = [
     {
@@ -103,10 +101,8 @@ const HamburgerMenu = () => {
 
 
 
-            <div className="p-4">
+            {/* <div className="p-4">
             <div className="border-gray-600 border rounded-xl h-[45px] flex items-center justify-between px-1">
-        {/* <button className="text-white">Light</button>
-    <button className="text-white">Dark</button> */}
         <button
           className={`${isLightMode ? 'text-blue-500 rounded-lg bg-[#246BFD1A] px-5 py-1 flex items-center gap-1' : 'text-gray-200 px-5 py-2'} focus:outline-none font-roboto font-normal flex items-center gap-1`}
           onClick={handleLightToggle}
@@ -120,7 +116,7 @@ const HamburgerMenu = () => {
           Dark <img className="w-5 cursor-pointer" src={moon} alt="" />
         </button>
       </div>
-            </div>
+            </div> */}
 
 
 

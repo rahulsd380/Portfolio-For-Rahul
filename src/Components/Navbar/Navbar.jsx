@@ -1,6 +1,5 @@
 import { NavLink, useNavigate } from "react-router-dom";
 import HamburgerMenu from "./HamburgerMenu";
-import ToggleBtn from "./ToggleBtn";
 import downloadIcon from "../../assets/Icons/New folder/download.svg"
 import Ripples from 'react-ripples'
 
@@ -66,7 +65,7 @@ const Navbar = () => {
         </div>
 
         <div className="flex items-center gap-6">
-          <ToggleBtn />
+          {/* <ToggleBtn /> */}
 
           <Ripples during={1500}>
           <a
