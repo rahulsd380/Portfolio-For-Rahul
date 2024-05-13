@@ -7,11 +7,19 @@ export default {
   darkMode : "class",
   theme: {
     extend: {
+      keyframes: {
+        u: {
+            from: { transform: 'rotate(360deg)' },
+            to: { transform: 'rotate(0deg)' }
+        }
+    },
+    
       fontFamily : {
         Montserrat : ["Montserrat", "sans-serif"],
         Lato : ["Lato", "sans-serif"],
         Poppins : ["Poppins", "sans-serif"],
       },
+      
       screens: {
         xs: '300px',
         sm: '375px',

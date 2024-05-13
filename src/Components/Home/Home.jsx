@@ -30,7 +30,7 @@ const Home = () => {
           <AnimCursor />
           <Navbar />
           <Hero />
-          <InfoCard />
+          {/* <InfoCard /> */}
           <AboutMe />
           <ShortResume />
           <Projects />

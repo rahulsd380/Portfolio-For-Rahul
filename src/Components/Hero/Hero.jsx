@@ -1,12 +1,12 @@
-import img from "../../assets/Images/Photo.png";
+// import img from "../../assets/Images/Photo.png";
 import e1 from "../../assets/Images/E 1.svg";
-import e2 from "../../assets/Images/E 2.png";
 import talk from "../../assets/Icons/New folder/talk.svg";
-import { Link, NavLink, useNavigate } from "react-router-dom";
 import TextTransition, { presets } from "react-text-transition";
 import { useEffect, useState } from "react";
 import Ripples from "react-ripples";
 import "aos/dist/aos.css";
+import CircularAnimatedImg from "../Home/CircularAnimatedImg/CircularAnimatedImg";
+import { useNavigate } from "react-router-dom";
 
 const TEXTS = [
   "FULL-STACK WEB DEVELOPER",
@@ -36,7 +36,7 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="relative flex flex-col lg:flex-row gap-16 lg:gap-0 items-center justify-between max-w-6xl mx-auto mt-[80px] px-3 xl:px-0"
+      className="relative flex flex-col lg:flex-row gap-16 lg:gap-0 items-center justify-between max-w-6xl mx-auto  px-3 xl:px-0"
     >
       <div className="absolute -left-[160px] -top-32">
         <img src={e1} alt="" />
@@ -67,7 +67,7 @@ const Hero = () => {
           </div>
         </Link> */}
 
-        <Ripples during={1500}>
+        <Ripples  onClick={navigateToTalk} during={1500}>
           <button className="bg-gradient-to-br from-blue-500 to-indigo-800 py-3 px-8 font-Poppins text-white rounded-[10px] flex items-center gap-2">
             Let’s Talk Us
             <img className="w-5" src={talk} alt="" />
@@ -75,13 +75,17 @@ const Hero = () => {
         </Ripples>
       </div>
 
-      <img
+
+      {/* <img
         data-aos="fade-left"
         data-aos-duration="2000"
         className="w-[500px] lg:w-[420px]"
         src={img}
         alt=""
-      />
+      /> */}
+
+      <CircularAnimatedImg/>
+      {/* <Nex/> */}
 
       {/* <div className="absolute -right-24 -top-10 ">
         <img src={e2} alt="" />

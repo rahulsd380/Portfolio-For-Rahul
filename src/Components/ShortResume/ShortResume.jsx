@@ -38,12 +38,28 @@ const ShortResume = () => {
       img: html,
       title: "HTML5",
     },
+    {
+      img: html,
+      title: "HTML5",
+    },
+    {
+      img: html,
+      title: "HTML5",
+    },
+    {
+      img: html,
+      title: "HTML5",
+    },
+    {
+      img: html,
+      title: "HTML5",
+    },
   ];
 
   const [activeTab, setActiveTab] = useState("Professional Skills");
   return (
     <div className="max-w-6xl mx-auto mt-[80px] px-3 xl:px-0">
-      <div>
+      <div className="">
         <p className="text-white font-Poppins mb-5 text-center">
           Academic, Skills And Experience
         </p>
@@ -81,14 +97,15 @@ const ShortResume = () => {
           </div>
         </div>
 
+        {/* <div className="flex justify-center gap-10"> */}
         {activeTab === "Professional Skills" && (
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 mt-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 mt-12">
             {skills.map((skill, index) => (
               <div
                 data-aos="fade-up"
                 data-aos-duration="2000"
                 key={index}
-                className="w-full mobileLg:w-[244px] h-[244px] bg-[#0E1330] border border-[#282D45] rounded-[20px] flex flex-col justify-center items-center gap-7 mb-9 relative"
+                className="w-full md:w-[244px] h-[244px] bg-[#0E1330] border border-[#282D45] rounded-[20px] flex flex-col justify-center items-center gap-7 mb-9 relative"
               >
                 <img className="absolute right-0 top-0" src={vector} alt="" />
 
@@ -101,6 +118,7 @@ const ShortResume = () => {
             ))}
           </div>
         )}
+        {/* </div> */}
 
         {activeTab === "Education" && (
           <div className="text-white mt-12">Education</div>

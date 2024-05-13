@@ -49,7 +49,7 @@ const Navbar = () => {
   return (
     <div className="bg-[#0E1330] border-b border-[#282D45] px-3 xl:px-0 py-3 w-full sticky z-20 top-0">
       <div className="max-w-6xl mx-auto flex items-center justify-between font-Lato text-lg">
-        <h1 className="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent font-Montserrat text-3xl font-bold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
+        <h1 className="bg-gradient-to-br from-blue-600 to-indigo-400 bg-clip-text text-transparent font-Montserrat text-[26px] font-bold">
           Rahul Sutradhar
         </h1>
         <div className="hidden lg:flex items-center gap-7 z-10">

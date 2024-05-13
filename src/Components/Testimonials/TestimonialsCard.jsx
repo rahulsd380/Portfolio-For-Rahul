@@ -1,6 +1,7 @@
 import quotationRight from "../../assets/Icons/New folder/bxs_quote-left (1).svg";
 import quotationLeft from "../../assets/Icons/New folder/bxs_quote-left.svg";
 import img from "../../assets/Icons/New folder/58.png";
+import stars from "../../assets/Icons/New folder/stars.svg";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -16,7 +17,7 @@ const TestimonialsCard = () => {
         "Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper",
       clientName: "Mr Jone Dose",
       clientImg: img,
-      profession: "Creative Director",
+      profession: "Founder of FashionFusion",
     },
     {
       index: 2,
@@ -25,7 +26,7 @@ const TestimonialsCard = () => {
         "Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper",
       clientName: "Mr Jone Dose",
       clientImg: img,
-      profession: "Creative Director",
+      profession: "Founder of FashionFusion",
     },
     {
       index: 3,
@@ -34,7 +35,7 @@ const TestimonialsCard = () => {
         "Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper",
       clientName: "Mr Jone Dose",
       clientImg: img,
-      profession: "Creative Director",
+      profession: "Founder of FashionFusion",
     },
     {
       index: 4,
@@ -43,7 +44,7 @@ const TestimonialsCard = () => {
         "Nam liber tempor cum soluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper per tem por legere me doming vulputate velit esse molestiesoluta nobis eleifend option congue is nihil imper",
       clientName: "Mr Jone Dose",
       clientImg: img,
-      profession: "Creative Director",
+      profession: "Founder of FashionFusion",
     },
   ];
   return (
@@ -77,37 +78,37 @@ const TestimonialsCard = () => {
         >
           {testimonialsDetails?.map((detail) => (
             <SwiperSlide key={detail?.index}>
-              <div className="relative mt-10">
-                {detail?.index % 2 === 1 && (
-                  <img
-                    className="w-10 absolute -top-9"
-                    src={quotationLeft}
-                    alt=""
-                  />
-                )}
-
-                <p className="text-white font-Poppins text-[12px] md:text-[14px] font-normal mt-3">
-                  {detail?.review}
-                </p>
-
-                {detail?.index % 2 === 0 && (
-                  <div className="flex justify-end mt-4 absolute right-0">
-                    <img className="w-10" src={quotationRight} alt="" />
-                  </div>
-                )}
-
-                <div className="flex items-center gap-5 mt-8">
+              <div className="mt-10 bg-[#0E1330] border border-[#282D45] rounded-[20px] p-5">
+              <div className="flex items-center gap-5">
                   <img src={detail?.clientImg} alt="" />
                   <div>
-                    <h1 className="text-[#0696E7] font-Montserrat text-2xl font-semibold text-center">
+                    <h1 className="text-white text-opacity-90 font-Lato text-2xl font-semibold">
                       {detail?.clientName}
                     </h1>
 
-                    <p className="text-white font-Poppins mt-2">
+                    <p className="text-white text-opacity-50 font-Poppins mt-2">
                       {detail?.profession}
                     </p>
+
+                    
                   </div>
                 </div>
+                
+
+                <p className="text-white font-Poppins text-[12px] md:text-[14px] font-normal mt-6">
+                  {detail?.review}
+                </p>
+
+                <div className="flex justify-between items-center mt-4">
+                <img src={stars} alt="" />
+                <p className="text-white text-opacity-50 font-Montserrat text-base font-normal">
+                Friday,January 21 
+                </p>
+                </div>
+
+              
+
+                
               </div>
             </SwiperSlide>
           ))}

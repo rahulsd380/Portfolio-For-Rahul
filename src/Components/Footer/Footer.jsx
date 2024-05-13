@@ -15,7 +15,7 @@ const Footer = () => {
       <div className="max-w-6xl mx-auto px-3 xl:px-0 flex flex-col gap-9 py-10">
         <div className="flex flex-col md:flex-row justify-between">
           <div className="flex flex-col gap-2">
-            <h1 className="bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent font-Poppins text-[20px] font-bold">
+            <h1 className="bg-gradient-to-br from-blue-600 to-indigo-400 bg-clip-text text-transparent font-Poppins text-[20px] font-bold">
               Rahul Sutradhar
             </h1>
 
