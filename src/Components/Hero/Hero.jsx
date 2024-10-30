@@ -5,8 +5,8 @@ import TextTransition, { presets } from "react-text-transition";
 import { useEffect, useState } from "react";
 import Ripples from "react-ripples";
 import "aos/dist/aos.css";
-import CircularAnimatedImg from "../Home/CircularAnimatedImg/CircularAnimatedImg";
 import { useNavigate } from "react-router-dom";
+import CircularAnimatedImg from './../../pages/Home/CircularAnimatedImg/CircularAnimatedImg';
 
 const TEXTS = [
   "FULL-STACK WEB DEVELOPER",
@@ -36,23 +36,23 @@ const Hero = () => {
   return (
     <div
       id="home"
-      className="relative flex flex-col lg:flex-row gap-16 lg:gap-0 items-center justify-between max-w-6xl mx-auto  px-3 xl:px-0"
+      className="mt-16 lg:mt-0 relative flex flex-col lg:flex-row gap-16 lg:gap-0 items-center justify-between max-w-6xl mx-auto px-3 xl:px-0"
     >
       <div className="absolute -left-[160px] -top-32">
         <img src={e1} alt="" />
       </div>
 
       <div data-aos="fade-right" data-aos-duration="2000" className="">
-        <p className="text-[#939393] font-Poppins text-[35px] font-normal">
-          <TextTransition springConfig={presets.wobbly}>
+        <p className="text-[#939393] font-Poppins text-[35px] font-normal text-balance mb-16 lg:mb-8 ">
+          <TextTransition direction="down" springConfig={presets.wobbly}>
             {TEXTS[index % TEXTS.length]}
           </TextTransition>
         </p>
 
-        <p className="text-[#0294E8] font-Poppins text-sm md:text-[22px] font-semibold mt-10">
+        <p className="text-white font-Sora text-sm md:text-[22px] font-semibold">
           Hello, I’m
         </p>
-        <h1 className="dark:text-white text-black font-Montserrat text-5xl md:text-[70px] font-semibold leading-[60px] md:leading-[80px] mt-1">
+        <h1 className="bg-gradient-to-br from-blue-600 to-indigo-300 bg-clip-text text-transparent text-5xl md:text-[65px] font-bold leading-[60px] md:leading-[80px] mt-1 font-Sora">
           Rahul Sutradhar{" "}
         </h1>
         <p className="text-[#939393] font-Poppins text-[12px] md:text-[18px] font-normal mt-4 mb-8">
@@ -68,7 +68,7 @@ const Hero = () => {
         </Link> */}
 
         <Ripples  onClick={navigateToTalk} during={1500}>
-          <button className="bg-gradient-to-br from-blue-500 to-indigo-800 py-3 px-8 font-Poppins text-white rounded-[10px] flex items-center gap-2">
+          <button className="border border-blue-700 hover:bg-gradient-to-br hover:from-blue-500 hover:to-indigo-800 transition duration-300 py-4 px-8 font-Poppins text-white rounded-[30px] flex items-center gap-2">
             Let’s Talk Us
             <img className="w-5" src={talk} alt="" />
           </button>

@@ -18,6 +18,7 @@ export default {
         Montserrat : ["Montserrat", "sans-serif"],
         Lato : ["Lato", "sans-serif"],
         Poppins : ["Poppins", "sans-serif"],
+        Sora : ["Sora", "sans-serif"],
       },
       
       screens: {

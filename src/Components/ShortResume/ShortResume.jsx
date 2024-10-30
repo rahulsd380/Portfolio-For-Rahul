@@ -55,8 +55,8 @@ const ShortResume = () => {
       title: "HTML5",
     },
   ];
-
   const [activeTab, setActiveTab] = useState("Professional Skills");
+  const tabButtons = ["Professional Skills", "Achievements"]
   return (
     <div className="max-w-6xl mx-auto mt-[80px] px-3 xl:px-0">
       <div className="">
@@ -68,33 +68,22 @@ const ShortResume = () => {
           Short Resume{" "}
         </h1>
 
-        <div className="w-full h-20 rounded-[78px] border border-[#0696E7] flex items-center  justify-between px-[2px]">
-          <div
-            onClick={() => setActiveTab("Professional Skills")}
-            className={`${
-              activeTab === "Professional Skills" ? "bg-[#0696E7]" : "bg-none"
-            } cursor-pointer rounded-[78px] h-[72px] flex justify-center items-center text-white font-Poppins text-xs md:text-xl w-full`}
-          >
-            Professional Skills
-          </div>
+        <div className="w-full max-w-[500px] mx-auto h-20 rounded-[78px] border border-[#0696E7] flex items-center  justify-between px-[2px]">
 
-          <div
-            onClick={() => setActiveTab("Education")}
+          {
+            tabButtons.map((button, index) => 
+              <div
+              key={index}
+            onClick={() => setActiveTab(button)}
             className={`${
-              activeTab === "Education" ? "bg-[#0696E7]" : "bg-none"
+              activeTab === button ? "bg-[#0696E7]" : "bg-none"
             } cursor-pointer rounded-[78px] h-[72px] flex justify-center items-center text-white font-Poppins text-xs md:text-xl w-full`}
           >
-            Education
+           {button}
           </div>
-
-          <div
-            onClick={() => setActiveTab("Achievements")}
-            className={`${
-              activeTab === "Achievements" ? "bg-[#0696E7]" : "bg-none"
-            } cursor-pointer rounded-[78px] h-[72px] flex justify-center items-center text-white font-Poppins text-xs md:text-xl w-full`}
-          >
-            Achievements
-          </div>
+            )
+          }
+          
         </div>
 
         {/* <div className="flex justify-center gap-10"> */}
@@ -119,10 +108,6 @@ const ShortResume = () => {
           </div>
         )}
         {/* </div> */}
-
-        {activeTab === "Education" && (
-          <div className="text-white mt-12">Education</div>
-        )}
 
         {activeTab === "Achievements" && (
           <div className="text-white mt-12">Achievements</div>

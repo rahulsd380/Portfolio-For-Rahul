@@ -50,7 +50,7 @@ const Navbar = () => {
     <div className="bg-[#0E1330] border-b border-[#282D45] px-3 xl:px-0 py-3 w-full sticky z-20 top-0">
       <div className="max-w-6xl mx-auto flex items-center justify-between font-Lato text-lg">
         <h1 className="bg-gradient-to-br from-blue-600 to-indigo-400 bg-clip-text text-transparent font-Montserrat text-[26px] font-bold">
-          Rahul Sutradhar
+          Developer Rahul
         </h1>
         <div className="hidden lg:flex items-center gap-7 z-10">
           {navlinks.map(({ action, label }, index) => (
@@ -67,11 +67,11 @@ const Navbar = () => {
         <div className="flex items-center gap-6">
           {/* <ToggleBtn /> */}
 
-          <Ripples during={1500}>
+          <Ripples className="" during={1500}>
           <a
             href="/src/assets/Resume_of_Rahul Sutradhar.pdf"
             download
-            className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-1 mobileLg:px-3  sm:text-base text-white rounded sm:rounded-[10px] flex items-center gap-2"
+            className="hidden md:flex items-center gap-2 bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-1 mobileLg:px-3  sm:text-base text-white rounded sm:rounded-[10px] "
           >
             <span className="text-xs mobileLg:text-base">Download Resume</span>
             <img className="w-5 animate-pulse" src={downloadIcon} alt="" />
