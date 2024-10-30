@@ -1,12 +1,12 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 import upArrrow from "../../assets/Icons/New folder/up-arrow-blue.svg";
 import line from "../../assets/Icons/New folder/staright-line.svg";
 
 const EducationCard = ({ title, place, year }) => {
   return (
     <div className="relative p-5 rounded-xl group overflow-hidden">
-      <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300 cursor-pointer"></div>
-      
+      <div className="absolute inset-0 bg-blue-600 opacity-0 group-hover:opacity-100 transition-opacity duration-500 cursor-pointer"></div>
+
       <div className="relative z-10">
         <h1 className="text-white font-Poppins text-xl font-semibold leading-5 capitalize group-hover:text-white">
           {title}

@@ -2,30 +2,23 @@ import { NavLink, useNavigate } from "react-router-dom";
 import HamburgerMenu from "./HamburgerMenu";
 import downloadIcon from "../../assets/Icons/New folder/download.svg"
 import Ripples from 'react-ripples'
+import ShareFeedback from "../ShareFeedback/ShareFeedback";
 
 const Navbar = () => {
   const navigate = useNavigate();
   const navlinks = [
-    {
-      label: "Home",
-      action: () => {
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      },
-    },
+    // {
+    //   label: "Home",
+    //   action: () => {
+    //     window.scrollTo({ top: 0, behavior: "smooth" });
+    //   },
+    // },
     {
       label: "About Me",
       action: () => {
         navigate("/");
         const aboutMe = document.getElementById("about-me");
         aboutMe?.scrollIntoView({ behavior: "smooth" });
-      },
-    },
-    {
-      label: "Services",
-      action: () => {
-        navigate("/");
-        const services = document.getElementById("services");
-        services?.scrollIntoView({ behavior: "smooth" });
       },
     },
     {
@@ -62,10 +55,20 @@ const Navbar = () => {
               {label} <span className="mt-[2px] h-[1px] w-[0px] rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 transition-all duration-500 group-hover:w-full"></span>
             </NavLink>
           ))}
+
+          <ShareFeedback/>
         </div>
 
         <div className="flex items-center gap-6">
           {/* <ToggleBtn /> */}
+
+          {/* <Ripples className="" during={1500}>
+          <button
+            className="hidden md:flex items-center gap-2 bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-1 mobileLg:px-3  sm:text-base text-white rounded sm:rounded-[10px] "
+          >
+            <span className="text-xs mobileLg:text-base">Share Your Feedback</span>
+          </button>
+          </Ripples> */}
 
           <Ripples className="" during={1500}>
           <a

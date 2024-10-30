@@ -68,7 +68,7 @@ const Hero = () => {
         </Link> */}
 
         <Ripples  onClick={navigateToTalk} during={1500}>
-          <button className="border border-blue-700 hover:bg-gradient-to-br hover:from-blue-500 hover:to-indigo-800 transition duration-300 py-4 px-8 font-Poppins text-white rounded-[30px] flex items-center gap-2">
+          <button className="border border-blue-700 bg-gradient-to-br from-blue-500 to-indigo-800 transition duration-300 py-4 px-8 font-Poppins text-white rounded-[30px] flex items-center gap-2">
             Let’s Talk Us
             <img className="w-5" src={talk} alt="" />
           </button>

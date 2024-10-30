@@ -7,7 +7,7 @@ const Testimonials = () => {
 
       <div className="">
         <p className="text-white font-Poppins mb-5 text-center">
-          Experience With me
+          Experience With Me
         </p>
 
         <h1 className="text-[#0696E7] font-Montserrat text-5xl md:text-[40px] font-bold mb-12 text-center">
