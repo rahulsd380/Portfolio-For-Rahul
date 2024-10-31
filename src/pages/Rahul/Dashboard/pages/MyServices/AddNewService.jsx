@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import cross from "../../../../../assets/Icons/New folder/cross.svg";
@@ -137,6 +138,11 @@ const AddNewService = ({ isModalOpen, setIsModalOpen }) => {
       </div>
     </div>
   );
+};
+
+AddNewService.propTypes = {
+  isModalOpen: PropTypes.bool.isRequired,
+  setIsModalOpen: PropTypes.func.isRequired,
 };
 
 export default AddNewService;
