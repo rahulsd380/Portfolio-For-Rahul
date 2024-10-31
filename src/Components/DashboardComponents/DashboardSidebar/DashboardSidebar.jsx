@@ -44,7 +44,7 @@ const DashboardSidebar = () => {
   const [isBlogsPropdownOpen, setIsBlogsPropdownOpen] = useState(true);
 
   return (
-    <div className="w-[320px] px-7 py-8 text-white h-screen overflow-y-auto bg-[#0E1330] border-r border-[#282D45]">
+    <div className="w-[320px] px-7 py-8 text-white overflow-y-auto bg-[#0E1330] border-r border-[#282D45] sticky top-0 left-0">
       <Link to="/" className="flex items-center gap-2 mb-4">
         <img
           className="w-8"
@@ -57,7 +57,7 @@ const DashboardSidebar = () => {
       </Link>
 
       {/* Navlinks */}
-      <div className="flex flex-col">
+      <div className="flex flex-col mt-10">
         {dashboardSidebarLinks.map((item) => (
           <Link
             key={item.label}
@@ -87,7 +87,7 @@ const DashboardSidebar = () => {
                 </p>
               </div>
               <FaChevronDown
-                className={`transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : "rotate-0"}`}
+                className={`text-xs transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : "rotate-0"}`}
                 style={{ color: "#aeb9e1" }}
               />
             </div>
@@ -127,7 +127,7 @@ const DashboardSidebar = () => {
                 </p>
               </div>
               <FaChevronDown
-                className={`transition-transform duration-300 ${isQualificationDropwownOpen ? "rotate-180" : "rotate-0"}`}
+                className={`text-xs transition-transform duration-300 ${isQualificationDropwownOpen ? "rotate-180" : "rotate-0"}`}
                 style={{ color: "#aeb9e1" }}
               />
             </div>
@@ -167,7 +167,7 @@ const DashboardSidebar = () => {
                 </p>
               </div>
               <FaChevronDown
-                className={`transition-transform duration-300 ${isProjectPropdownOpen ? "rotate-180" : "rotate-0"}`}
+                className={`text-xs transition-transform duration-300 ${isProjectPropdownOpen ? "rotate-180" : "rotate-0"}`}
                 style={{ color: "#aeb9e1" }}
               />
             </div>
@@ -207,7 +207,7 @@ const DashboardSidebar = () => {
                 </p>
               </div>
               <FaChevronDown
-                className={`transition-transform duration-300 ${isBlogsPropdownOpen ? "rotate-180" : "rotate-0"}`}
+                className={`text-xs transition-transform duration-300 ${isBlogsPropdownOpen ? "rotate-180" : "rotate-0"}`}
                 style={{ color: "#aeb9e1" }}
               />
             </div>

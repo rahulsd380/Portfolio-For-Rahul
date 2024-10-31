@@ -10,6 +10,8 @@ import Home from './pages/Home/Home';
 import Dashboard from './pages/Rahul/Dashboard/Dashboard';
 import Verify from './pages/Rahul/Verify';
 import DashboardLayout from './Layout/DashboardLayout/DashboardLayout';
+import AboutMe from './pages/Rahul/Dashboard/pages/AboutMe/AboutMe';
+import MyServices from './pages/Rahul/Dashboard/pages/MyServices/MyServices';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -36,6 +38,14 @@ const router = createBrowserRouter([
       {
         path : '',
         element : <Dashboard/>
+      },
+      {
+        path : 'about-me',
+        element : <AboutMe/>
+      },
+      {
+        path : 'my-services',
+        element : <MyServices/>
       },
     ]
   },
