@@ -1,6 +1,7 @@
 import { Outlet } from "react-router-dom";
 import DashboardSidebar from "../../Components/DashboardComponents/DashboardSidebar/DashboardSidebar";
 import DashboardHeader from "../../Components/DashboardComponents/DashboardHeader/DashboardHeader";
+import { Toaster } from "sonner";
 
 const DashboardLayout = () => {
   return (
@@ -10,6 +11,17 @@ const DashboardLayout = () => {
         <DashboardHeader />
         <Outlet />
       </div>
+
+      <Toaster
+          position="bottom-center"
+          toastOptions={{
+            unstyled: true,
+            classNames: {
+              toast: "bg-[#074353]",
+              title: "text-white",
+            },
+          }}
+        />
     </div>
   );
 };
