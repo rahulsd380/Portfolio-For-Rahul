@@ -28,6 +28,8 @@ const AddNewService = ({ isModalOpen, setIsModalOpen }) => {
   const handleImageRemove = () => {
     setUploadedImage(null);
   };
+
+  
   return (
     <div
       onClick={() => setIsModalOpen(false)}

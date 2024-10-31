@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import img from "../../../../../assets/Icons/New folder/58.png";
 import stars from "../../../../../assets/Icons/New folder/stars.svg";
 
@@ -20,12 +21,11 @@ const ViewEndorsmentModal = ({ isModalOpen, setIsModalOpen }) => {
       >
         <div className="mt-10 bg-[#0E1330] border border-[#282D45] rounded-[20px] p-5">
           <div className="flex items-center gap-5">
-            <img src={img} alt="" />
+            <img src={img} alt="Profile" />
             <div>
               <h1 className="text-white text-opacity-90 font-Lato text-2xl font-semibold">
                 Rahul SD
               </h1>
-
               <p className="text-white text-opacity-50 font-Poppins mt-2">
                 Web Developer
               </p>
@@ -38,15 +38,20 @@ const ViewEndorsmentModal = ({ isModalOpen, setIsModalOpen }) => {
           </p>
 
           <div className="flex justify-between items-center mt-4">
-            <img src={stars} alt="" />
+            <img src={stars} alt="Rating" />
             <p className="text-white text-opacity-50 font-Montserrat text-base font-normal">
-              Friday,January 21
+              Friday, January 21
             </p>
           </div>
         </div>
       </div>
     </div>
   );
+};
+
+ViewEndorsmentModal.propTypes = {
+  isModalOpen: PropTypes.bool.isRequired,
+  setIsModalOpen: PropTypes.func.isRequired,
 };
 
 export default ViewEndorsmentModal;

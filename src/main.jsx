@@ -13,6 +13,7 @@ import DashboardLayout from './Layout/DashboardLayout/DashboardLayout';
 import AboutMe from './pages/Rahul/Dashboard/pages/AboutMe/AboutMe';
 import MyServices from './pages/Rahul/Dashboard/pages/MyServices/MyServices';
 import Endorsments from './pages/Rahul/Dashboard/pages/Endorsments/Endorsments';
+import ProfessionalSkills from './pages/Rahul/Dashboard/pages/ProfessionalSkills/ProfessionalSkills';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -49,8 +50,12 @@ const router = createBrowserRouter([
         element : <MyServices/>
       },
       {
-        path : 'endorsement',
+        path : 'endorsements',
         element : <Endorsments/>
+      },
+      {
+        path : 'professional-skills',
+        element : <ProfessionalSkills/>
       },
     ]
   },
