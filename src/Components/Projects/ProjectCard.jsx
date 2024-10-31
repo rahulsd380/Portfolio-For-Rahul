@@ -3,11 +3,22 @@ import img2 from "../../assets/Images/Project Cover (2).png";
 import img3 from "../../assets/Images/Project Cover (3).png";
 import img4 from "../../assets/Images/Project Cover.png";
 import view from "../../assets/Icons/Skills/view.svg";
+import link from "../../assets/Icons/New folder/link.svg";
+import details from "../../assets/Icons/New folder/details.svg";
 import github from "../../assets/Icons/Skills/github.svg";
 import { Link } from "react-router-dom";
 import Ripples from "react-ripples";
+import { useEffect, useRef, useState } from "react";
 
 const ProjectCard = () => {
+  const [openDropdowns, setOpenDropdowns] = useState({});
+  const dropDownRef = useRef(null);
+
+  const items = [
+    { label: "View Details", path: "/", icon:details },
+    { label: "See Live Link", path: "/", icon:link },
+  ];
+
   const projectsDetails = [
     {
       title: "Food Share",
@@ -46,6 +57,24 @@ const ProjectCard = () => {
       liveLink: "",
     },
   ];
+
+  const toggleDropdown = (index) => {
+    setOpenDropdowns((prevState) => ({
+      ...prevState,
+      [index]: !prevState[index],
+    }));
+  };
+
+  useEffect(() => {
+    const close = (e) => {
+      if (dropDownRef.current && !dropDownRef.current.contains(e.target)) {
+        setOpenDropdowns({});
+      }
+    };
+    document.addEventListener("mousedown", close);
+    return () => document.removeEventListener("mousedown", close);
+  }, []);
+
   return (
     <div>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-20">
@@ -59,8 +88,7 @@ const ProjectCard = () => {
             <h1>
               <span className="text-white font-Montserrat text-xl font-semibold">
                 {detail?.title} -{" "}
-              </span>{" "}
-              -
+              </span>
               <span className="text-gray-300 font-Poppins text-base font-normal">
                 {detail?.subTitle}
               </span>
@@ -90,18 +118,41 @@ const ProjectCard = () => {
                 </p>
               </Link>
 
-              <Ripples during={1500}>
-                <Link
-                  to={`/${detail?.liveLink}`}
-                  className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-5 text-xs sm:text-base text-white rounded sm:rounded-[7px] flex items-center gap-2 transition duration-300 transform hover:-translate-y-0.5"
-                >
-                  VIew Project
-                  <img src={view} alt="" />
-                </Link>
-              </Ripples>
-            </div>
+              <div ref={dropDownRef} className="relative">
+                <Ripples during={1500} onClick={() => toggleDropdown(index)}>
+                  <button className="bg-gradient-to-br from-blue-500 to-indigo-800 font-Poppins py-3 px-5 text-xs sm:text-base text-white rounded sm:rounded-[7px] flex items-center gap-2">
+                    View Project
+                    <img src={view} alt="" />
+                  </button>
+                </Ripples>
 
-            {/* <div className="w-full h-[1px] bg-gradient-to-br from-blue-500 to-indigo-800"></div> */}
+                <ul
+                  className={`${
+                    openDropdowns[index] ? "visible" : "invisible"
+                  } absolute z-50 w-full space-y-1 flex flex-col mt-1`}
+                >
+                  {items.map((item, idx) => (
+                    <Link
+                      to={item.path}
+                      key={idx}
+                      className={`bg-[#0E1330] border border-[#282D45] rounded-md text-white p-2 flex items-center gap-3 ${
+                        openDropdowns[index]
+                          ? "opacity-100 duration-500"
+                          : "opacity-0 duration-150"
+                      } hover:bg-gradient-to-br from-blue-500 to-indigo-800 w-full`}
+                      style={{
+                        transform: `translateY(${
+                          openDropdowns[index] ? 0 : (idx + 1) * 10
+                        }px)`,
+                      }}
+                    >
+                      <img src={item.icon} alt="" className="size-5" />
+                      {item.label}
+                    </Link>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </div>
         ))}
       </div>
