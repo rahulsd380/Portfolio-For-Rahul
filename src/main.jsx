@@ -12,6 +12,7 @@ import Verify from './pages/Rahul/Verify';
 import DashboardLayout from './Layout/DashboardLayout/DashboardLayout';
 import AboutMe from './pages/Rahul/Dashboard/pages/AboutMe/AboutMe';
 import MyServices from './pages/Rahul/Dashboard/pages/MyServices/MyServices';
+import Endorsments from './pages/Rahul/Dashboard/pages/Endorsments/Endorsments';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path : 'my-services',
         element : <MyServices/>
+      },
+      {
+        path : 'endorsement',
+        element : <Endorsments/>
       },
     ]
   },
