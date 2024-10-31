@@ -50,7 +50,7 @@ const Navbar = () => {
             <NavLink
               key={index}
               onClick={action}
-              className="text-white hover:text-[#0997E6] transition duration-400 group flex flex-col"
+              className="text-white text-base hover:text-[#0997E6] transition duration-400 group flex flex-col"
             >
               {label} <span className="mt-[2px] h-[1px] w-[0px] rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 transition-all duration-500 group-hover:w-full"></span>
             </NavLink>

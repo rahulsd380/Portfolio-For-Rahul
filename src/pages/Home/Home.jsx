@@ -3,7 +3,6 @@ import { useEffect, useState } from "react";
 // import SmoothScroll from "../SmoothScroll/SmoothScroll.jsx";
 import PreLoader from "./../../Components/PreLoader/PreLoader";
 import AnimCursor from "./../../Components/AnimCursor/AnimCursor";
-import Navbar from "./../../Components/Navbar/Navbar";
 import Hero from "./../../Components/Hero/Hero";
 import AboutMe from "./../../Components/AboutMe/AboutMe";
 import ShortResume from "./../../Components/ShortResume/ShortResume";
@@ -12,7 +11,6 @@ import MyServices from "./../../Components/MyServices/MyServices";
 import Testimonials from "./../../Components/Testimonials/Testimonials";
 import Blogs from "./../../Components/Blogs/Blogs";
 import GetInTouch from "./../../Components/GetInTouch/GetInTouch";
-import Footer from "./../../Components/Footer/Footer";
 import Education from "../../Components/Education/Education";
 import Experience from "../../Components/Experience/Experience";
 
@@ -32,7 +30,6 @@ const Home = () => {
         // <SmoothScroll>
         <>
           <AnimCursor />
-          <Navbar />
           <Hero />
           {/* <InfoCard /> */}
           <AboutMe />
@@ -50,7 +47,6 @@ const Home = () => {
           <Testimonials />
           <Blogs />
           <GetInTouch />
-          <Footer />
         </>
         // </SmoothScroll>
       )}

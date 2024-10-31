@@ -11,9 +11,9 @@ const AchievementCard = ({ img, title, completedAt }) => {
       <h1 className="text-white font-Poppins text-xl font-medium leading-[30px] capitalize mt-5">
         {title}
       </h1>
-      <h1 className="text-white font-Poppins text-sm leading-[30px] capitalize mt-[10px]">
+      <p className="text-white font-Poppins text-sm leading-[30px] capitalize mt-[10px]">
         {completedAt}
-      </h1>
+      </p>
     </div>
   );
 };

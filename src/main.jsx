@@ -7,6 +7,9 @@ import {
 } from "react-router-dom";
 import Root from './Layout/Root/Root';
 import Home from './pages/Home/Home';
+import Dashboard from './pages/Rahul/Dashboard/Dashboard';
+import Verify from './pages/Rahul/Verify';
+import DashboardLayout from './Layout/DashboardLayout/DashboardLayout';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -15,7 +18,25 @@ const router = createBrowserRouter([
       {
         path : '/',
         element : <Home/>
-      }
+      },
+      {
+        path : '/verify-yourself',
+        element : <Verify/>
+      },
+      {
+        path : '/rahul-sutradhar/admin/dashboard',
+        element : <Dashboard/>
+      },
+    ]
+  },
+  {
+    path: "/rahul-sutradhar/admin/dashboard",
+    element: <DashboardLayout/>,
+    children : [
+      {
+        path : '',
+        element : <Dashboard/>
+      },
     ]
   },
 ]);
