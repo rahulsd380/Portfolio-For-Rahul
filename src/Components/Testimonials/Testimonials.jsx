@@ -11,7 +11,7 @@ const Testimonials = () => {
         </p>
 
         <h1 className="text-[#0696E7] font-Montserrat text-5xl md:text-[40px] font-bold mb-12 text-center">
-          Testimonials
+        Endorsements
         </h1>
 
         <div className="max-w-6xl mx-auto px-3 xl:px-0">
