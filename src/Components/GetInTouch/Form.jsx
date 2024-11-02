@@ -1,7 +1,7 @@
 import { useRef } from "react";
 import emailjs from "@emailjs/browser";
 import Ripples from "react-ripples";
-import { Toaster, toast } from "sonner";
+import { toast } from "sonner";
 
 const Form = () => {
   const form = useRef();
@@ -74,16 +74,6 @@ const Form = () => {
           </button>
         </Ripples>
       </div>
-      <Toaster
-        position="bottom-center"
-        toastOptions={{
-          unstyled: true,
-          classNames: {
-            toast: "bg-[#074353]",
-            title: "text-white",
-          },
-        }}
-      />
     </form>
   );
 };

@@ -1,4 +1,3 @@
-import html from "../../../../../assets/Icons/Skills/html.svg";
 import vector from "../../../../../assets/Icons/New folder/Ellipse 12.svg";
 import vector2 from "../../../../../assets/Icons/New folder/Ellipse 11.svg";
 import Ripples from "react-ripples";
@@ -7,43 +6,76 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import cross from "../../../../../assets/Icons/New folder/cross.svg";
 import photo from "../../../../../assets/Icons/New folder/photo.svg";
+import { useAddNewSkillMutation, useDeleteSkillMutation, useGetAllSkillsQuery } from "../../../../../redux/Features/Skills/skillApi";
+import { toast } from "sonner";
 
 const ProfessionalSkills = () => {
+  const {data} = useGetAllSkillsQuery();
+  const [addNewSkill] = useAddNewSkillMutation();
+  const [deleteSkill] = useDeleteSkillMutation();
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
+  const [imagePreview, setImagePreview] = useState(null);
+  console.log(imagePreview);
+  console.log(uploadedImage);
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
 
-  const skills = [
-    { img: html, title: "HTML5" },
-    { img: html, title: "HTML5" },
-    { img: html, title: "HTML5" },
-    { img: html, title: "HTML5" },
-    { img: html, title: "HTML5" },
-    { img: html, title: "HTML5" },
-    { img: html, title: "HTML5" },
-    { img: html, title: "HTML5" },
-    { img: html, title: "HTML5" },
-    { img: html, title: "HTML5" },
-  ];
-
   const toggleFormVisibility = () => {
     setIsFormVisible((prev) => !prev);
   };
 
   const onSubmit = (data) => {
-    const formData = { ...data, image: uploadedImage };
-    console.log(formData);
+    const formData = new FormData();
+    const skillName = {
+      skillName:data.skillName
+    }
+    formData.append("data", JSON.stringify(skillName));
+    formData.append("file", uploadedImage);
+    
+    toast.promise(
+      addNewSkill(formData).unwrap(),
+      {
+        loading: 'Adding skill...',
+        success: (response) => {
+          return response?.message || 'Skill added successfully!';
+        },
+        error: (err) => {
+          console.error('Error:', err);
+          return 'Failed to add skill...';
+        },
+      }
+    );
+  };
+
+  const handleDeleteSkill = (id) => {
+    toast.promise(
+      deleteSkill(id).unwrap(),
+      {
+        loading: 'Deleting skill...',
+        success: (response) => {
+          return response?.message || 'Skill deleted successfully!';
+        },
+        error: (err) => {
+          console.error('Error:', err);
+        },
+      }
+    );
   };
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
+    console.log(file);
     if (file) {
-      const imageUrl = URL.createObjectURL(file);
-      setUploadedImage(imageUrl);
+      setUploadedImage(file);
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImagePreview(() => [reader.result]);
+      };
+      reader.readAsDataURL(file);
     }
   };
 
@@ -76,11 +108,11 @@ const ProfessionalSkills = () => {
           transition-all duration-700 ease-in-out ${isFormVisible && "mt-7"}`}
       >
         <input
-          {...register("name", { required: "Skill name is required" })}
+          {...register("skillName", { required: "Skill name is required" })}
           placeholder="Enter skill name*"
           type="text"
           className={`outline-none bg-[#0E1330] border ${
-            errors.name ? "border-red-500" : "border-[#282D45]"
+            errors.skillName ? "border-red-500" : "border-[#282D45]"
           } rounded-[10px] py-3 px-5 w-full text-white focus:border-[0.2px] focus:border-[#0696E7]/50 transition duration-300`}
         />
 
@@ -89,7 +121,7 @@ const ProfessionalSkills = () => {
           {uploadedImage ? (
             <div className="relative size-20">
               <img
-                src={uploadedImage}
+                src={imagePreview}
                 alt="Service Icon"
                 className="w-full h-full rounded-lg object-cover"
               />
@@ -141,24 +173,28 @@ const ProfessionalSkills = () => {
           isFormVisible && "mt-8"
         }`}
       >
-        {skills.map((skill, index) => (
-          <div
-            key={index}
-            className="w-full md:size-[230px] bg-[#0E1330] border border-[#282D45] rounded-[20px] flex flex-col justify-center items-center gap-7 relative group overflow-hidden"
-          >
-            <img className="absolute right-0 top-0" src={vector} alt="" />
-            <img className="absolute left-0 bottom-0" src={vector2} alt="" />
-            <img src={skill?.img} alt="" />
-            <h1 className="text-white font-Poppins text-2xl font-semibold text-center">
-              {skill.title}
-            </h1>
+        {data?.data?.map((skill, index) => (
+        <div
+          key={index}
+          className="w-full md:size-[230px] bg-[#0E1330] border border-[#282D45] rounded-[20px] flex flex-col justify-center items-center gap-7 relative group overflow-hidden"
+        >
+          <img className="absolute right-0 top-0" src={vector} alt="" />
 
-            <div className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
+          <img className="absolute left-0 bottom-0" src={vector2} alt="" />
+          <img src={skill?.icon} alt="" className="size-28" />
+          <h1 className="text-white font-Poppins text-2xl font-semibold text-center">
+            {skill.skillName}
+          </h1>
+
+          <div onClick={() => handleDeleteSkill(skill?._id)} className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-all duration-300">
               <MdDelete className="text-[#aeb9e1] cursor-pointer" size={24} />
             </div>
-          </div>
-        ))}
+        </div>
+      ))}
       </div>
+
+      
+      
     </div>
   );
 };

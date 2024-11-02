@@ -1,7 +1,6 @@
 import { useForm } from "react-hook-form";
 import photo from "../../../../../assets/Icons/New folder/photo.svg";
 import Ripples from "react-ripples";
-import { Toaster } from "sonner";
 
 const UpdateAboutMe = () => {
   const {
@@ -20,7 +19,7 @@ const UpdateAboutMe = () => {
     console.log(formData);
   };
 
-  
+
   return (
     <div>
       <form
@@ -31,17 +30,15 @@ const UpdateAboutMe = () => {
           {...register("title", { required: "Title is required" })}
           placeholder="Enter Title*"
           type="text"
-          className={`outline-none bg-[#0E1330] border ${
-            errors.title ? "border-red-500" : "border-[#282D45]"
-          } rounded-[10px] py-3 px-5 w-full text-white focus:border-[0.2px] focus:border-[#0696E7]/50 transition duration-300`}
+          className={`outline-none bg-[#0E1330] border ${errors.title ? "border-red-500" : "border-[#282D45]"
+            } rounded-[10px] py-3 px-5 w-full text-white focus:border-[0.2px] focus:border-[#0696E7]/50 transition duration-300`}
         />
 
         <textarea
           {...register("description", { required: "Description is required" })}
           placeholder="Enter Description*"
-          className={`outline-none bg-[#0E1330] border ${
-            errors.description ? "border-red-500" : "border-[#282D45]"
-          } rounded-[10px] py-3 px-5 w-full text-white h-[150px] focus:border-[0.2px] focus:border-[#0696E7]/50 transition duration-300`}
+          className={`outline-none bg-[#0E1330] border ${errors.description ? "border-red-500" : "border-[#282D45]"
+            } rounded-[10px] py-3 px-5 w-full text-white h-[150px] focus:border-[0.2px] focus:border-[#0696E7]/50 transition duration-300`}
         ></textarea>
 
         <div className="flex items-center justify-between">
@@ -86,16 +83,6 @@ const UpdateAboutMe = () => {
           </button>
         </Ripples>
       </div> */}
-        <Toaster
-          position="bottom-center"
-          toastOptions={{
-            unstyled: true,
-            classNames: {
-              toast: "bg-[#074353]",
-              title: "text-white",
-            },
-          }}
-        />
       </form>
     </div>
   );

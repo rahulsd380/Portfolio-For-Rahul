@@ -14,48 +14,53 @@ import AboutMe from './pages/Rahul/Dashboard/pages/AboutMe/AboutMe';
 import MyServices from './pages/Rahul/Dashboard/pages/MyServices/MyServices';
 import Endorsments from './pages/Rahul/Dashboard/pages/Endorsments/Endorsments';
 import ProfessionalSkills from './pages/Rahul/Dashboard/pages/ProfessionalSkills/ProfessionalSkills';
+import ProjectDetails from './pages/ProjectDetails/ProjectDetails';
+import { Provider } from 'react-redux';
+import store from './redux/store';
+import { Toaster } from 'sonner';
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root/>,
-    children : [
+    element: <Root />,
+    children: [
       {
-        path : '/',
-        element : <Home/>
+        path: '/',
+        element: <Home />
       },
       {
-        path : '/verify-yourself',
-        element : <Verify/>
+        path: '/verify-yourself',
+        element: <Verify />
       },
       {
-        path : '/rahul-sutradhar/admin/dashboard',
-        element : <Dashboard/>
+        path: "/project-details/:id",
+        element: <ProjectDetails />,
+        loader: ({ params }) => fetch(`http://localhost:5000/api/v1/professional-skills/${params.id}`)
       },
     ]
   },
   {
     path: "/rahul-sutradhar/admin/dashboard",
-    element: <DashboardLayout/>,
-    children : [
+    element: <DashboardLayout />,
+    children: [
       {
-        path : '',
-        element : <Dashboard/>
+        path: '',
+        element: <Dashboard />
       },
       {
-        path : 'about-me',
-        element : <AboutMe/>
+        path: 'about-me',
+        element: <AboutMe />
       },
       {
-        path : 'my-services',
-        element : <MyServices/>
+        path: 'my-services',
+        element: <MyServices />
       },
       {
-        path : 'endorsements',
-        element : <Endorsments/>
+        path: 'endorsements',
+        element: <Endorsments />
       },
       {
-        path : 'professional-skills',
-        element : <ProfessionalSkills/>
+        path: 'professional-skills',
+        element: <ProfessionalSkills />
       },
     ]
   },
@@ -63,6 +68,9 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+      <Toaster position="bottom-center" />
+    </Provider>
   </React.StrictMode>,
 )

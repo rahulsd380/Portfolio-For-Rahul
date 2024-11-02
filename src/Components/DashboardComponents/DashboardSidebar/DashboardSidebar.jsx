@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
-import { FaChevronDown, FaRegFileAlt, FaRegUser } from "react-icons/fa"; 
+import { FaChevronDown, FaRegFileAlt, FaRegUser } from "react-icons/fa";
 import { FaAward } from "react-icons/fa";
 import { FaClipboardList } from "react-icons/fa";
 import { LuLayoutDashboard } from "react-icons/lu";
@@ -10,36 +10,36 @@ import { MdPerson, MdWork } from "react-icons/md";
 import { GiOfficeChair } from "react-icons/gi";
 import { RiServiceLine } from "react-icons/ri";
 import { BsFillPersonCheckFill } from "react-icons/bs";
-import { MdArticle, MdListAlt, MdAdd } from 'react-icons/md';
+import { MdArticle, MdListAlt, MdAdd } from "react-icons/md";
 
 const DashboardSidebar = () => {
-    const dashboardSidebarLinks = [
-        {
-            label: "Dashboard",
-            path: "/rahul-sutradhar/admin/dashboard",
-            icon: <LuLayoutDashboard className="text-[#aeb9e1] text-xl"/>,
-          },
-          {
-            label: "About Me",
-            path: "/rahul-sutradhar/admin/dashboard/about-me",
-            icon: <FaRegUser className="text-[#aeb9e1] text-xl"/>,
-          },
-          {
-            label: "My Services",
-            path: "/rahul-sutradhar/admin/dashboard/my-services",
-            icon: <RiServiceLine className="text-[#aeb9e1] text-xl"/>,
-          },
-          {
-            label: "Endorsements",
-            path: "/rahul-sutradhar/admin/dashboard/endorsements",
-            icon: <BsFillPersonCheckFill className="text-[#aeb9e1] text-xl"/>,
-          },
-    ];
-
+  const dashboardSidebarLinks = [
+    {
+      label: "Dashboard",
+      path: "/rahul-sutradhar/admin/dashboard",
+      icon: <LuLayoutDashboard className="text-[#aeb9e1] text-xl" />,
+    },
+    {
+      label: "About Me",
+      path: "/rahul-sutradhar/admin/dashboard/about-me",
+      icon: <FaRegUser className="text-[#aeb9e1] text-xl" />,
+    },
+    {
+      label: "My Services",
+      path: "/rahul-sutradhar/admin/dashboard/my-services",
+      icon: <RiServiceLine className="text-[#aeb9e1] text-xl" />,
+    },
+    {
+      label: "Endorsements",
+      path: "/rahul-sutradhar/admin/dashboard/endorsements",
+      icon: <BsFillPersonCheckFill className="text-[#aeb9e1] text-xl" />,
+    },
+  ];
 
   const location = useLocation();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
-  const [isQualificationDropwownOpen, setIsQualificationDropwownOpen] = useState(false);
+  const [isQualificationDropwownOpen, setIsQualificationDropwownOpen] =
+    useState(false);
   const [isProjectPropdownOpen, setIsProjectPropdownOpen] = useState(true);
   const [isBlogsPropdownOpen, setIsBlogsPropdownOpen] = useState(true);
 
@@ -81,13 +81,18 @@ const DashboardSidebar = () => {
           >
             <div className="flex items-center justify-between w-full">
               <div className="flex items-center gap-3">
-              <PiReadCvLogo className="text-[#aeb9e1] text-xl"/>
-                <p className="text-[1rem] font-[400]" style={{ color: "#aeb9e1" }}>
+                <PiReadCvLogo className="text-[#aeb9e1] text-xl" />
+                <p
+                  className="text-[1rem] font-[400]"
+                  style={{ color: "#aeb9e1" }}
+                >
                   Short Resume
                 </p>
               </div>
               <FaChevronDown
-                className={`text-xs transition-transform duration-300 ${isDropdownOpen ? "rotate-180" : "rotate-0"}`}
+                className={`text-xs transition-transform duration-300 ${
+                  isDropdownOpen ? "rotate-180" : "rotate-0"
+                }`}
                 style={{ color: "#aeb9e1" }}
               />
             </div>
@@ -95,13 +100,13 @@ const DashboardSidebar = () => {
 
           {isDropdownOpen && (
             <ul className="bg-[#1C2242] mx-3 border border-[#282D45] rounded-md p-[8px] flex flex-col gap-6 text-[1rem] text-white">
-              <li className="flex items-center gap-3 text-sm">
+              <Link to={`/rahul-sutradhar/admin/dashboard/professional-skills`} className="flex items-center gap-3 text-sm">
                 <FaClipboardList
                   className={`transition-transform duration-300`}
                   style={{ color: "#aeb9e1" }}
                 />
                 <span style={{ color: "#aeb9e1" }}>Professional Skill</span>
-              </li>
+              </Link>
               <li className="flex items-center gap-3 text-sm">
                 <FaAward
                   className={`transition-transform duration-300`}
@@ -117,17 +122,24 @@ const DashboardSidebar = () => {
         <div className="flex flex-col">
           <div
             className={`flex items-center justify-between py-4 px-3 rounded-lg cursor-pointer transition-all duration-200`}
-            onClick={() => setIsQualificationDropwownOpen(!isQualificationDropwownOpen)}
+            onClick={() =>
+              setIsQualificationDropwownOpen(!isQualificationDropwownOpen)
+            }
           >
             <div className="flex items-center justify-between w-full">
               <div className="flex items-center gap-3">
-              <PiReadCvLogo className="text-[#aeb9e1] text-xl"/>
-                <p className="text-[1rem] font-[400]" style={{ color: "#aeb9e1" }}>
-                Qualifications
+                <PiReadCvLogo className="text-[#aeb9e1] text-xl" />
+                <p
+                  className="text-[1rem] font-[400]"
+                  style={{ color: "#aeb9e1" }}
+                >
+                  Qualifications
                 </p>
               </div>
               <FaChevronDown
-                className={`text-xs transition-transform duration-300 ${isQualificationDropwownOpen ? "rotate-180" : "rotate-0"}`}
+                className={`text-xs transition-transform duration-300 ${
+                  isQualificationDropwownOpen ? "rotate-180" : "rotate-0"
+                }`}
                 style={{ color: "#aeb9e1" }}
               />
             </div>
@@ -161,13 +173,18 @@ const DashboardSidebar = () => {
           >
             <div className="flex items-center justify-between w-full">
               <div className="flex items-center gap-3">
-              <FaRegFileAlt className="text-[#aeb9e1] text-xl"/>
-                <p className="text-[1rem] font-[400]" style={{ color: "#aeb9e1" }}>
-                Projects
+                <FaRegFileAlt className="text-[#aeb9e1] text-xl" />
+                <p
+                  className="text-[1rem] font-[400]"
+                  style={{ color: "#aeb9e1" }}
+                >
+                  Projects
                 </p>
               </div>
               <FaChevronDown
-                className={`text-xs transition-transform duration-300 ${isProjectPropdownOpen ? "rotate-180" : "rotate-0"}`}
+                className={`text-xs transition-transform duration-300 ${
+                  isProjectPropdownOpen ? "rotate-180" : "rotate-0"
+                }`}
                 style={{ color: "#aeb9e1" }}
               />
             </div>
@@ -201,13 +218,18 @@ const DashboardSidebar = () => {
           >
             <div className="flex items-center justify-between w-full">
               <div className="flex items-center gap-3">
-              <MdArticle className="text-[#aeb9e1] text-xl"/>
-                <p className="text-[1rem] font-[400]" style={{ color: "#aeb9e1" }}>
-                Blogs
+                <MdArticle className="text-[#aeb9e1] text-xl" />
+                <p
+                  className="text-[1rem] font-[400]"
+                  style={{ color: "#aeb9e1" }}
+                >
+                  Blogs
                 </p>
               </div>
               <FaChevronDown
-                className={`text-xs transition-transform duration-300 ${isBlogsPropdownOpen ? "rotate-180" : "rotate-0"}`}
+                className={`text-xs transition-transform duration-300 ${
+                  isBlogsPropdownOpen ? "rotate-180" : "rotate-0"
+                }`}
                 style={{ color: "#aeb9e1" }}
               />
             </div>
@@ -232,9 +254,6 @@ const DashboardSidebar = () => {
             </ul>
           )}
         </div>
-
-
-
       </div>
     </div>
   );
