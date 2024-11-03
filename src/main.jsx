@@ -18,6 +18,8 @@ import ProjectDetails from './pages/ProjectDetails/ProjectDetails';
 import { Provider } from 'react-redux';
 import store from './redux/store';
 import { Toaster } from 'sonner';
+import Projects from './pages/Rahul/Dashboard/pages/Projects/Projects';
+import AddNewProject from './pages/Rahul/Dashboard/pages/Projects/AddNewProject';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,9 +34,9 @@ const router = createBrowserRouter([
         element: <Verify />
       },
       {
-        path: "/project-details/:id",
+        path: "/project-details",
         element: <ProjectDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/api/v1/professional-skills/${params.id}`)
+        // loader: ({ params }) => fetch(`http://localhost:5000/api/v1/professional-skills/${params.id}`)
       },
     ]
   },
@@ -61,6 +63,14 @@ const router = createBrowserRouter([
       {
         path: 'professional-skills',
         element: <ProfessionalSkills />
+      },
+      {
+        path: 'projects',
+        element: <Projects />
+      },
+      {
+        path: 'add-new-project',
+        element: <AddNewProject />
       },
     ]
   },
