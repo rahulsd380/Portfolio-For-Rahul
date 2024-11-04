@@ -1,33 +1,27 @@
-import { MdEdit, MdDelete } from 'react-icons/md';
+import { MdDelete } from 'react-icons/md';
+import { useDeleteServiceMutation, useGetAllServicesQuery } from '../../../../../redux/Features/MyServices/myServicesApi';
+import { toast } from 'sonner';
 
 const MyServicesTable = () => {
-    const servicesData = [
-        {
-          id: 1,
-          name: "Web Development",
-          description: "Creating responsive and dynamic websites using the latest technologies.",
+  const {data} = useGetAllServicesQuery();
+  const [deleteService] = useDeleteServiceMutation();
+
+  // Delete achievement function
+  const handleDeleteService = (id) => {
+    toast.promise(
+      deleteService(id).unwrap(),
+      {
+        loading: 'Deleting...',
+        success: (response) => {
+          return response?.message || 'Service deleted successfully!';
         },
-        {
-          id: 2,
-          name: "Mobile App Development",
-          description: "Building cross-platform mobile applications for both iOS and Android.",
+        error: (err) => {
+          console.error('Error:', err);
         },
-        {
-          id: 3,
-          name: "SEO Optimization",
-          description: "Enhancing website visibility on search engines through various strategies.",
-        },
-        {
-          id: 4,
-          name: "UI/UX Design",
-          description: "Designing user-friendly interfaces and experiences for web and mobile applications.",
-        },
-        {
-          id: 5,
-          name: "Content Writing",
-          description: "Providing high-quality content tailored to your business needs.",
-        },
-      ];
+      }
+    );
+  };
+
     return (
         <div className="border border-[#282D45] p-4 rounded-xl mt-5">
         <table className="w-full">
@@ -41,12 +35,12 @@ const MyServicesTable = () => {
             </tr>
           </thead>
           <tbody className="bg-[#0E1330]">
-            {servicesData.map((service, index) => (
+            {data?.data?.map((service, index) => (
               <tr key={service.id} className="border-b border-[#282D45]">
                 <td className="p-3 text-[#aeb9e1]">{index + 1}</td>
                 {/* Icon */}
                 <td className="p-3">
-                  <span className="text-[#aeb9e1]">🛠️</span>
+                  <span className="text-[#aeb9e1]"><img src={service.icon} alt="" className='size-10 rounded-lg' /></span>
                 </td>
                 {/* Name */}
                 <td className="p-3 text-[#aeb9e1]">{service.name}</td>
@@ -57,9 +51,8 @@ const MyServicesTable = () => {
                     : service.description}
                 </td>
                 {/* Action buttons */}
-                <td className="p-3 flex gap-3">
-                  <MdEdit className="text-[#aeb9e1] cursor-pointer" />
-                  <MdDelete className="text-blue-500 cursor-pointer" />
+                <td className="p-3">
+                  <MdDelete onClick={() => handleDeleteService(service?._id)} className="text-blue-500 cursor-pointer" />
                 </td>
               </tr>
             ))}
