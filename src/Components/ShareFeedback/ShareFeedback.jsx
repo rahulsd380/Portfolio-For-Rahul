@@ -38,12 +38,12 @@ const ShareFeedback = () => {
               onClick={() => setOpenModal(false)}
               src={crossIcon}
               alt="cross icon"
-              className="size-7"
+              className="size-7 cursor-pointer"
             />
           </div>
 
           {/* Body */}
-         <FeedbackForm/>
+         <FeedbackForm setOpenModal={setOpenModal}/>
         </div>
       </div>
     </div>

@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
-import img from "../../../../../assets/Icons/New folder/58.png";
-import stars from "../../../../../assets/Icons/New folder/stars.svg";
+import star from "../../../../../assets/Icons/New folder/star.svg";
+import formatDate from './../../../../../utils/convertDate';
 
-const ViewEndorsmentModal = ({ isModalOpen, setIsModalOpen }) => {
+const ViewEndorsmentModal = ({ isModalOpen, setIsModalOpen, _id, authorImg, name, feedback, occupation, rating, createdAt }) => {
+
   return (
     <div
       onClick={() => setIsModalOpen(false)}
@@ -21,26 +22,34 @@ const ViewEndorsmentModal = ({ isModalOpen, setIsModalOpen }) => {
       >
         <div className="mt-10 bg-[#0E1330] border border-[#282D45] rounded-[20px] p-5">
           <div className="flex items-center gap-5">
-            <img src={img} alt="Profile" />
+            <img src={authorImg} alt={name} className='size-[75px] rounded-lg' />
             <div>
               <h1 className="text-white text-opacity-90 font-Lato text-2xl font-semibold">
-                Rahul SD
+                {name}
               </h1>
               <p className="text-white text-opacity-50 font-Poppins mt-2">
-                Web Developer
+                {occupation}
               </p>
             </div>
           </div>
 
           <p className="text-white font-Poppins text-[12px] md:text-[14px] font-normal mt-6">
-            khsgag asdhfgdf sidfgsd isdfgs isdufysd fisudfs dfiusdfisdufyhsdf
-            iuyhsdf sdifuysd f{" "}
+            {feedback}
           </p>
 
           <div className="flex justify-between items-center mt-4">
-            <img src={stars} alt="Rating" />
+          <div className="flex items-center justify-center gap-3">
+                  {[...Array(rating)].map((_, index) => (
+                    <img
+                      key={index}
+                      src={star}
+                      alt="star"
+                      className="size-6"
+                    />
+                  ))}
+                </div>
             <p className="text-white text-opacity-50 font-Montserrat text-base font-normal">
-              Friday, January 21
+            {formatDate(createdAt)}
             </p>
           </div>
         </div>
