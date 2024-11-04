@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { useRef } from 'react';
 import LightGallery from 'lightgallery/react';
 import img from "../../assets/Images/Project Cover (3).png";
@@ -10,7 +11,7 @@ import 'lightgallery/css/lg-zoom.css';
 import { Navigation } from 'swiper/modules';
 import lgZoom from 'lightgallery/plugins/zoom';
 
-const Images = () => {
+const Images = ({ images }) => {
     const prevRef = useRef(null);
     const nextRef = useRef(null);
 
@@ -31,10 +32,10 @@ const Images = () => {
                     modules={[Navigation]}
                     className="mySwiper"
                 >
-                    {[...Array(5)].map((_, index) => (
+                    {images?.map((image, index) => (
                         <SwiperSlide key={index}>
                             <a href={img}> {/* LightGallery needs anchor tags for images */}
-                                <img src={img} alt={`Slide ${index + 1}`} className="size-full rounded-lg h-[500px]" />
+                                <img src={image} alt={`Slide ${index + 1}`} className="size-full rounded-lg h-[500px]" />
                             </a>
                         </SwiperSlide>
                     ))}
@@ -58,6 +59,10 @@ const Images = () => {
             </button>
         </div>
     );
+};
+
+Images.propTypes = {
+    images: PropTypes.arrayOf(PropTypes.string).isRequired,
 };
 
 export default Images;

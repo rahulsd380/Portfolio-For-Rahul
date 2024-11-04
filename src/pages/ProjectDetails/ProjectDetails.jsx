@@ -1,3 +1,4 @@
+/* eslint-disable no-unsafe-optional-chaining */
 import { useLoaderData } from "react-router-dom";
 import { GrTechnology } from "react-icons/gr";
 import { MdOndemandVideo } from "react-icons/md";
@@ -12,6 +13,8 @@ const ProjectDetails = () => {
     const [tab, setTab] = useState("Technology Used")
     const projectDetails = useLoaderData();
     console.log(projectDetails);
+
+    const { name, tagline, images, technologyLogos } = projectDetails?.data;
 
     const tabButtons = [
         {
@@ -29,11 +32,11 @@ const ProjectDetails = () => {
             {/* Header with title back icon */}
             <div className="flex items-center justify-between pb-4 border-b border-[#282D45]">
                 <h1>
-                    <span className="text-white font-Montserrat text-2xl font-semibold">
-                        Tail Stories -{" "}
+                    <span className="text-white font-Montserrat text-xl md:text-2xl font-semibold capitalize">
+                        {name} -{" "}
                     </span>
-                    <span className="text-gray-300 font-Poppins text-base font-normal">
-                        Share your story today.
+                    <span className="text-gray-300 font-Poppins text-sm md:text-base font-normal capitalize">
+                        {tagline}
                     </span>
                 </h1>
 
@@ -45,7 +48,7 @@ const ProjectDetails = () => {
                 <div className="w-full xl:w-[65%]">
                     {/* Left side */}
                     {/* Images */}
-                    <Images />
+                    <Images images={images} />
 
 
 
@@ -65,7 +68,7 @@ const ProjectDetails = () => {
                     <div className="bg-[#0E1330] border border-[#282D45] rounded-lg h-fit p-3 mt-5">
                         {
                             tab === "Technology Used" ?
-                                <TechnologyUsed />
+                                <TechnologyUsed technologyLogos={technologyLogos} />
 
                                 :
                                 <NoVideo />
@@ -77,7 +80,7 @@ const ProjectDetails = () => {
 
 
                 {/* Right side */}
-                <Details />
+                <Details projectDetails={projectDetails} />
             </div>
 
         </div>

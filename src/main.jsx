@@ -20,6 +20,7 @@ import store from './redux/store';
 import { Toaster } from 'sonner';
 import Projects from './pages/Rahul/Dashboard/pages/Projects/Projects';
 import AddNewProject from './pages/Rahul/Dashboard/pages/Projects/AddNewProject';
+import Achievements from './pages/Rahul/Dashboard/pages/Achievements/Achievements';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,9 +35,9 @@ const router = createBrowserRouter([
         element: <Verify />
       },
       {
-        path: "/project-details",
+        path: "/project-details/:id",
         element: <ProjectDetails />,
-        // loader: ({ params }) => fetch(`http://localhost:5000/api/v1/professional-skills/${params.id}`)
+        loader: ({ params }) => fetch(`http://localhost:5000/api/v1/projects/${params.id}`)
       },
     ]
   },
@@ -71,6 +72,10 @@ const router = createBrowserRouter([
       {
         path: 'add-new-project',
         element: <AddNewProject />
+      },
+      {
+        path: 'achievements',
+        element: <Achievements />
       },
     ]
   },

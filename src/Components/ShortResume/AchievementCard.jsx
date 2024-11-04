@@ -1,27 +1,55 @@
 import PropTypes from "prop-types";
+import { MdDelete } from "react-icons/md";
+import { useDeleteAchievementMutation } from "../../redux/Features/Achievements/achievementsApi";
+import { toast } from "sonner";
 
-const AchievementCard = ({ img, title, completedAt }) => {
+const AchievementCard = ({ _id, image, name, organization, completedAt, isDeleteBtnNeeded }) => {
+  const [deleteAchievement] = useDeleteAchievementMutation();
+
+  // Delete achievement function
+  const handleDeleteAchievement = (id) => {
+    toast.promise(
+      deleteAchievement(id).unwrap(),
+      {
+        loading: 'Deleting...',
+        success: (response) => {
+          return response?.message || 'Achievement deleted successfully!';
+        },
+        error: (err) => {
+          console.error('Error:', err);
+        },
+      }
+    );
+  };
   return (
     <div
-      data-aos="fade-up"
-      data-aos-duration="2000"
-      className="h-[585px] bg-[#0E1330] border border-[#282D45] rounded-3xl p-4"
+      className="h-[550px] bg-[#0E1330] border border-[#282D45] rounded-3xl p-4 relative group overflow-hidden"
     >
-      <img src={img} alt={title} className="w-full h-[389px]" />
+      <img src={image} alt={name} className="w-full h-[389px] rounded-xl" />
       <h1 className="text-white font-Poppins text-xl font-medium leading-[30px] capitalize mt-5">
-        {title}
+        {name}
       </h1>
       <p className="text-white font-Poppins text-sm leading-[30px] capitalize mt-[10px]">
-        {completedAt}
+        {organization} - {completedAt}
       </p>
+
+      {
+        isDeleteBtnNeeded &&
+        <div onClick={() => handleDeleteAchievement(_id)} className="absolute top-2 right-2 opacity-0 group-hover:opacity-100 transition-all duration-300 bg-gradient-to-br from-blue-500 to-indigo-800 border border-[#282D45] p-2 rounded-lg text-[#aeb9e1]">
+          <MdDelete className="text-[#aeb9e1] cursor-pointer" size={24} />
+        </div>
+      }
     </div>
   );
 };
 
 AchievementCard.propTypes = {
-  img: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  _id: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
   completedAt: PropTypes.string.isRequired,
+  organization: PropTypes.string.isRequired,
+  isDeleteBtnNeeded: PropTypes.bool.isRequired,
 };
 
 export default AchievementCard;

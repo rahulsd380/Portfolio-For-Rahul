@@ -16,8 +16,6 @@ const ProfessionalSkills = () => {
   const [isFormVisible, setIsFormVisible] = useState(false);
   const [uploadedImage, setUploadedImage] = useState(null);
   const [imagePreview, setImagePreview] = useState(null);
-  console.log(imagePreview);
-  console.log(uploadedImage);
   const {
     register,
     handleSubmit,

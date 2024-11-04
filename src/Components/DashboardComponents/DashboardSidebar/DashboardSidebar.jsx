@@ -107,13 +107,13 @@ const DashboardSidebar = () => {
                 />
                 <span style={{ color: "#aeb9e1" }}>Professional Skill</span>
               </Link>
-              <li className="flex items-center gap-3 text-sm">
+              <Link to={`/rahul-sutradhar/admin/dashboard/achievements`} className="flex items-center gap-3 text-sm">
                 <FaAward
                   className={`transition-transform duration-300`}
                   style={{ color: "#aeb9e1" }}
                 />
                 <span style={{ color: "#aeb9e1" }}>Achievements</span>
-              </li>
+              </Link>
             </ul>
           )}
         </div>
