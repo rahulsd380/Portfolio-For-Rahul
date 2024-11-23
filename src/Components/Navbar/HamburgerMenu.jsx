@@ -1,9 +1,10 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import hamburger from "../../assets/Icons/hamburger menu.svg";
 import leftArrow from "../../assets/Icons/left-arrow.svg";
 
 const HamburgerMenu = () => {
+  const navigate = useNavigate();
   //   const [isLightMode, setLightMode] = useState(false)
   // const [isDarkMode, setDarkMode] = useState(true)
 
@@ -20,25 +21,38 @@ const HamburgerMenu = () => {
   // }
 
   const navlinks = [
-    {
-      label: "Home",
-      path: "",
-    },
+    // {
+    //   label: "Home",
+    //   action: () => {
+    //     window.scrollTo({ top: 0, behavior: "smooth" });
+    //   },
+    // },
     {
       label: "About Me",
-      path: "about-me",
-    },
-    {
-      label: "Services",
-      path: "services",
+      action: () => {
+        navigate("/");
+        const aboutMe = document.getElementById("about-me");
+        aboutMe?.scrollIntoView({ behavior: "smooth" });
+        setIsHamburgerOpen(false); // Close the hamburger menu
+      },
     },
     {
       label: "Projects",
-      path: "projects",
+      action: () => {
+        navigate("/");
+        const projects = document.getElementById("projects");
+        projects?.scrollIntoView({ behavior: "smooth" });
+        setIsHamburgerOpen(false); // Close the hamburger menu
+      },
     },
     {
-      label: "Contact us",
-      path: "contact-us",
+      label: "Contact Me",
+      action: () => {
+        navigate("/");
+        const contactMe = document.getElementById("contact-me");
+        contactMe?.scrollIntoView({ behavior: "smooth" });
+        setIsHamburgerOpen(false); // Close the hamburger menu
+      },
     },
   ];
 
@@ -72,31 +86,30 @@ const HamburgerMenu = () => {
       />
 
       <div
-        className={`overflow-y-scroll fixed inset-y-0 right-0 z-50 bg-gray-800 w-72 h-screen transition-all duration-300 transform ${
-          isHamburgerOpen ? "translate-x-0" : "translate-x-full"
-        }`}
+        className={`overflow-y-scroll fixed inset-y-0 right-0 z-50 bg-gray-800 w-72 h-screen transition-all duration-300 transform ${isHamburgerOpen ? "translate-x-0" : "translate-x-full"
+          }`}
       >
         {isHamburgerOpen && (
           <div className="flex flex-col justify-between h-full">
-            
+
             <div className="flex flex-col gap-2">
-            <div className="flex justify-between items-center bg-[#0E1330] border-b border-[#282D45] p-4">
-              <h1 className="text-white font-Montserrat text-xl font-bold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
-                Rahul Sutradhar
-              </h1>
-              <img onClick={() => setIsHamburgerOpen(!isHamburgerOpen)} className="w-6 cursor-pointer" src={leftArrow} alt="" />
-            </div>
-            <div className="flex flex-col gap-7 p-4">
-              {navlinks.map((link, index) => (
-                <Link
-                  key={index}
-                  to={`/${link.path}`}
-                  className="text-white hover:text-[#0997E6] transition duration-400"
-                >
-                  {link?.label}
-                </Link>
-              ))}
-            </div>
+              <div className="flex justify-between items-center bg-[#0E1330] border-b border-[#282D45] p-4">
+                <h1 className="text-white font-Montserrat text-xl font-bold bg-gradient-to-r from-blue-500 to-teal-400 bg-clip-text text-transparent">
+                  Rahul Sutradhar
+                </h1>
+                <img onClick={() => setIsHamburgerOpen(!isHamburgerOpen)} className="w-6 cursor-pointer" src={leftArrow} alt="" />
+              </div>
+              <div className="flex flex-col gap-7 p-4">
+                {navlinks.map(({ action, label }, index) => (
+                  <NavLink
+                    key={index}
+                    onClick={action}
+                    className="text-white text-base hover:text-[#0997E6] transition duration-400 group flex flex-col"
+                  >
+                    {label} <span className="mt-[2px] h-[1px] w-[0px] rounded-full bg-gradient-to-br from-blue-500 to-indigo-600 transition-all duration-500 group-hover:w-full"></span>
+                  </NavLink>
+                ))}
+              </div>
             </div>
 
 

@@ -23,9 +23,9 @@ const AchievementCard = ({ _id, image, name, organization, completedAt, isDelete
   };
   return (
     <div
-      className="h-[550px] bg-[#0E1330] border border-[#282D45] rounded-3xl p-4 relative group overflow-hidden"
+      className="h-fit lg:h-[550px] bg-[#0E1330] border border-[#282D45] rounded-3xl p-4 relative group overflow-hidden"
     >
-      <img src={image} alt={name} className="w-full h-[389px] rounded-xl" />
+      <img src={image} alt={name} className="w-full h-[300px] lg:h-[389px] rounded-xl" />
       <h1 className="text-white font-Poppins text-xl font-medium leading-[30px] capitalize mt-5">
         {name}
       </h1>

@@ -21,7 +21,7 @@ const Verify = () => {
 
   const resetPin = () => {
     setPin("");
-    setValue("pin", ""); // Resetting the form value
+    setValue("pin", "");
   };
 
   const watchPin = watch("pin", "");
@@ -42,7 +42,7 @@ const Verify = () => {
           readOnly
         />
 
-        
+
 
         {/* Number buttons */}
         <div className="grid grid-cols-3 gap-4 mt-5">
@@ -70,16 +70,16 @@ const Verify = () => {
           </Ripples>
 
           {/* Reset Button */}
-        <Ripples during={1500}>
+          <Ripples during={1500}>
             <button
-            onClick={resetPin}
+              onClick={resetPin}
               type="submit"
               className="bg-gradient-to-br from-blue-500 to-indigo-800 border border-[#282D45] w-14 h-14 flex justify-center items-center rounded-lg"
             >
               <img className="size-8" src={cross} alt="Submit" />
             </button>
           </Ripples>
-        
+
 
           {/* Submit button */}
           <Ripples during={1500}>

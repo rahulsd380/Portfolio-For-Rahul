@@ -56,7 +56,7 @@ const Navbar = () => {
             </NavLink>
           ))}
 
-          <ShareFeedback/>
+          <ShareFeedback classNames={"mx-auto"}/>
         </div>
 
         <div className="flex items-center gap-6">

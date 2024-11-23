@@ -2,10 +2,10 @@ import { useState } from "react";
 import crossIcon from "../../assets/Icons/New folder/cross.svg";
 import FeedbackForm from "./FeedbackForm";
 
-const ShareFeedback = () => {
+const ShareFeedback = ({classNames}) => {
   const [openModal, setOpenModal] = useState(false);
   return (
-    <div className="mx-auto w-fit">
+    <div className={`w-fit ${classNames}`}>
       <button
         onClick={() => setOpenModal(true)}
         className="text-white text-base hover:text-[#0997E6] transition duration-400 group flex flex-col"

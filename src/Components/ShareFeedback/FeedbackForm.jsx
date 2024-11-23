@@ -135,10 +135,10 @@ const FeedbackForm = ({setOpenModal}) => {
                 >
                   <div className="flex items-center gap-3 text-white">
                     <img src={photo} width={25} height={25} alt="photo-icon" />
-                    Upload Service Icon
+                    Upload Your Photo
                   </div>
                   <p className="text-xs text-[#ACACAC]">
-                    Please upload Service Icon
+                    Please Upload Your Photo
                   </p>
                 </label>
                 <input
