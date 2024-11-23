@@ -91,7 +91,7 @@ const Details = ({ projectDetails }) => {
                     <Ripples className="w-full" during={1500}>
                         <Link
                             to={sourceCode}
-                            className="flex items-center gap-2 bg-[#00042B] border border-[#282D45] font-Poppins py-3 px-1 mobileLg:px-3  sm:text-base text-white rounded sm:rounded-[10px] w-full"
+                            className="flex items-center justify-center gap-2 bg-[#00042B] border border-[#282D45] font-Poppins py-3 px-1 mobileLg:px-3  sm:text-base text-white rounded sm:rounded-[10px] w-full"
                         >
                             <img className="w-5" src={github} alt="" />
                             Source Code

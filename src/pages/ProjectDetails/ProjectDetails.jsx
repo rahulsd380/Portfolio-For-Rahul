@@ -12,7 +12,6 @@ import Details from "./Details";
 const ProjectDetails = () => {
     const [tab, setTab] = useState("Technology Used")
     const projectDetails = useLoaderData();
-    console.log(projectDetails);
 
     const { name, tagline, images, technologyLogos } = projectDetails?.data;
 
@@ -56,7 +55,7 @@ const ProjectDetails = () => {
                     <div className="flex items-center gap-8 pb-4 border-b border-[#282D45] mt-8">
                         {
                             tabButtons.map((button, index) =>
-                                <button key={index} onClick={() => setTab(button.label)} className={`${tab === button.label ? "text-blue-500" : "text-[#ACACAC]"} font-Poppins font-medium leading-5 capitalize mt-5 flex items-center gap-3`}>
+                                <button key={index} onClick={() => setTab(button.label)} className={`${tab === button.label ? "text-blue-500" : "text-[#ACACAC]"} mobileLg:text-base xs:text-xs sm:text-sm font-Poppins font-medium leading-5 capitalize mt-5 flex items-center gap-3`}>
                                     {button.icon}
                                     {button.label}
                                 </button>
