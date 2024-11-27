@@ -25,7 +25,7 @@ const Education = () => {
           alt="education icon"
           className="size-[50px]"
         />
-        <h1 className="text-[#0696E7] font-Poppins text-5xl md:text-[50px] font-semibold">
+        <h1 className="text-[#0696E7] font-Poppins text-5xl md:text-4xl mobileLg:text-4xl sm:text-3xl  font-semibold">
           Education
         </h1>
       </div>

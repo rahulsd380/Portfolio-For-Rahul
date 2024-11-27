@@ -19,9 +19,9 @@ const Experience = () => {
   return (
     <div>
       {/* Header */}
-      <div className="flex items-center gap-5 mb-10 pl-5">
+      <div className="flex items-center gap-5 mb-5 lg:mb-10 pl-5">
         <img src={experience} alt="experience icon" className="size-[50px]" />
-        <h1 className="text-[#0696E7] font-Poppins text-5xl md:text-[50px] font-semibold">
+        <h1 className="text-[#0696E7] font-Poppins text-5xl md:text-4xl mobileLg:text-4xl sm:text-3xl font-semibold">
           Experience
         </h1>
       </div>

@@ -21,6 +21,7 @@ import { Toaster } from 'sonner';
 import Projects from './pages/Rahul/Dashboard/pages/Projects/Projects';
 import AddNewProject from './pages/Rahul/Dashboard/pages/Projects/AddNewProject';
 import Achievements from './pages/Rahul/Dashboard/pages/Achievements/Achievements';
+import BlogDetails from './pages/BlogDetails/BlogDetails';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home />
+      },
+      {
+        path: '/blog',
+        element: <BlogDetails />
       },
       {
         path: '/verify-yourself',
