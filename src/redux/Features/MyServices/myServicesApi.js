@@ -32,6 +32,9 @@ const myServicesApi = baseApi.injectEndpoints({
           url: `/services/create-service`,
           method: "POST",
           body: formData,
+          headers: {
+            'Content-Type': 'application/json',
+          },
         };
       },
       invalidatesTags: ["myServices"],

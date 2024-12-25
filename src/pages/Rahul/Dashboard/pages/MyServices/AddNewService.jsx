@@ -4,8 +4,8 @@ import { useForm } from "react-hook-form";
 import cross from "../../../../../assets/Icons/New folder/cross.svg";
 import photo from "../../../../../assets/Icons/New folder/photo.svg";
 import Ripples from "react-ripples";
-import { useAddNewServiceMutation } from "../../../../../redux/Features/MyServices/myServicesApi";
 import { toast } from "sonner";
+import { useAddNewServiceMutation } from "../../../../../redux/Features/MyServices/myServicesApi";
 
 const AddNewService = ({ isModalOpen, setIsModalOpen }) => {
   const [addNewService] = useAddNewServiceMutation();

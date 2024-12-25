@@ -34,7 +34,7 @@ const Images = ({ images }) => {
                 >
                     {images?.map((image, index) => (
                         <SwiperSlide key={index}>
-                            <a href={img}> {/* LightGallery needs anchor tags for images */}
+                            <a href={img}>
                                 <img src={image} alt={`Slide ${index + 1}`} className="size-full rounded-lg h-[500px]" />
                             </a>
                         </SwiperSlide>

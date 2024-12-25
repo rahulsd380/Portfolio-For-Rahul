@@ -11,11 +11,12 @@ import { IoTimerOutline } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
 
 const Details = ({ projectDetails }) => {
+    console.log(projectDetails);
 
     const { overview, duration, features, sourceCode, liveLink, technologyNames, category, projectType } = projectDetails?.data;
 
     return (
-        <div className="bg-[#0E1330] border border-[#282D45] rounded-lg w-full xl:w-[35%] h-fit p-3">
+        <div className="bg-[#0E1330] border border-[#282D45] rounded-lg w-full xl:w-[35%] h-[500px] overflow-y-auto custom-scrollbar p-3">
             {/* Project Overview */}
             <div>
                 <h1 className="text-white font-Montserrat font-semibold flex items-center gap-3">

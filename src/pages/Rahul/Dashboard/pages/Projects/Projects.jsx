@@ -1,22 +1,32 @@
 
 import { useState } from 'react';
-import { BsFillGridFill } from 'react-icons/bs';
-import { LuTableProperties } from 'react-icons/lu';
 import Ripples from 'react-ripples';
 import { Link } from 'react-router-dom';
+import { useGetAllProjectsQuery } from '../../../../../redux/Features/Projects/projectApi';
+import { PiBuildingApartment } from "react-icons/pi";
+import { FaUser } from 'react-icons/fa';
+import ProjectCard from '../../../../../Components/Projects/ProjectCard';
 
 const Projects = () => {
-    const [view, setView] = useState("Grid");
+    const { data } = useGetAllProjectsQuery();
+    const [activeTab, setActiveTab] = useState("Personal Projects");
     const buttons = [
         {
-            label: "Table",
-            icon: <LuTableProperties />
+            label: "Company Projects",
+            icon: <PiBuildingApartment />
         },
         {
-            label: "Grid",
-            icon: <BsFillGridFill />
+            label: "Personal Projects",
+            icon: <FaUser className='text-base' />
         },
-    ]
+    ];
+
+    const personalProjects = data?.data?.filter(
+        (project) => project.projectType === "Personal"
+    );
+    const companyProjects = data?.data?.filter(
+        (project) => project.projectType === "Company"
+    );
     return (
         <div>
             {/* Header */}
@@ -29,8 +39,8 @@ const Projects = () => {
                         buttons.map((item, index) =>
                             <Ripples key={index}>
                                 <button
-                                    onClick={() => setView(item.label)}
-                                    className={`${view === item.label ? "bg-gradient-to-br from-blue-500 to-indigo-800" : "bg-[#1C2242]"} border border-[#282D45] p-3 rounded-lg text-[#aeb9e1] text-[22px]`}
+                                    onClick={() => setActiveTab(item.label)}
+                                    className={`${activeTab === item.label ? "bg-gradient-to-br from-blue-500 to-indigo-800" : "bg-[#1C2242]"} border border-[#282D45] p-3 rounded-lg text-[#aeb9e1] text-[22px]`}
                                 >
                                     {item.icon}
                                 </button>
@@ -45,6 +55,22 @@ const Projects = () => {
                     </Ripples>
                 </div>
             </div>
+
+            {activeTab === "Personal Projects" && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mt-12">
+                    {personalProjects?.map((project) => (
+                        <ProjectCard key={project?._id} project={project} />
+                    ))}
+                </div>
+            )}
+
+            {activeTab === "Company Projects" && (
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-20 mt-12">
+                    {companyProjects?.map((project) => (
+                        <ProjectCard key={project?._id} project={project} />
+                    ))}
+                </div>
+            )}
         </div>
     );
 };

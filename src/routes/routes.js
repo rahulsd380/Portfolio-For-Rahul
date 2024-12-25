@@ -9,7 +9,7 @@ import MyServices from "../pages/Rahul/Dashboard/pages/MyServices/MyServices";
 import EndorsmentsTable from "../pages/Rahul/Dashboard/pages/Endorsments/EndorsmentsTable";
 import ProfessionalSkills from "../pages/Rahul/Dashboard/pages/ProfessionalSkills/ProfessionalSkills";
 import Root from "./../Layout/Root/Root";
-import BlogDetails from './../pages/BlogDetails/BlogDetails';
+import BlogDetails from "./../pages/BlogDetails/BlogDetails";
 
 export const router = createBrowserRouter([
   {
@@ -22,7 +22,7 @@ export const router = createBrowserRouter([
       },
       {
         path: "/blog",
-        element: <BlogDetails/>,
+        element: <BlogDetails />,
       },
       {
         path: "/verify-yourself",

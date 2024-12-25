@@ -12,6 +12,7 @@ import Details from "./Details";
 const ProjectDetails = () => {
     const [tab, setTab] = useState("Technology Used")
     const projectDetails = useLoaderData();
+    console.log(projectDetails);
 
     const { name, tagline, images, technologyLogos } = projectDetails?.data;
 

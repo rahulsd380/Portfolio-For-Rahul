@@ -10,7 +10,7 @@ const Education = () => {
       year: "2014 - 2020"
     },
     {
-      title: "Computer Science",
+      title: "Computer Science & Engineering",
       place: "Cumilla CCN Polytechnic Institute",
       year: "2020 - 2024"
     }

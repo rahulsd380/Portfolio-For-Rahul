@@ -13,6 +13,7 @@ import Blogs from "./../../Components/Blogs/Blogs";
 import GetInTouch from "./../../Components/GetInTouch/GetInTouch";
 import Education from "../../Components/Education/Education";
 import Experience from "../../Components/Experience/Experience";
+// import SmoothScroll from "../../Components/SmoothScroll/SmoothScroll";
 
 const Home = () => {
   const [isLoading, setISLoading] = useState(true);
@@ -27,9 +28,9 @@ const Home = () => {
       {isLoading ? (
         <PreLoader />
       ) : (
-        // <SmoothScroll>
         <>
           <AnimCursor />
+        {/* <SmoothScroll> */}
           <Hero />
           {/* <InfoCard /> */}
           <AboutMe />
@@ -47,8 +48,8 @@ const Home = () => {
           <Testimonials />
           <Blogs />
           <GetInTouch />
+        {/* </SmoothScroll> */}
         </>
-        // </SmoothScroll>
       )}
     </>
   );

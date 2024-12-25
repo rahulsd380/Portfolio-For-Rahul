@@ -96,7 +96,8 @@ const AddNewProject = () => {
             overview: data.overview,
             duration: data.duration,
             features: features || [],
-            sourceCode: data.sourceCode,
+            frontendRepo: data.frontendRepo,
+            backendRepo: data.backendRepo,
             liveLink: data.liveLink,
             overviewVideo: data.overviewVideo,
             technologyNames: technologyNames,
@@ -171,17 +172,28 @@ const AddNewProject = () => {
                 <div className="flex gap-4 w-full">
                     {/* Source Code and Live Link */}
                     <div className="flex-1">
-                        <label className="text-white mb-2 block">Source Code Link</label>
+                        <label className="text-white mb-2 block">Frontend Repo</label>
                         <input
-                            {...register("sourceCode")}
+                            {...register("frontendRepo")}
                             placeholder="Source code link"
                             type="text"
                             className="outline-none bg-[#0E1330] border border-[#282D45] rounded-[10px] py-3 px-5 w-full text-white focus:border-[#0696E7]/50 transition duration-300"
                         />
                     </div>
-
-                    {/* Live link */}
+                    {/* Source Code and Live Link */}
                     <div className="flex-1">
+                        <label className="text-white mb-2 block">Backend Repo</label>
+                        <input
+                            {...register("backendRepo")}
+                            placeholder="Source code link"
+                            type="text"
+                            className="outline-none bg-[#0E1330] border border-[#282D45] rounded-[10px] py-3 px-5 w-full text-white focus:border-[#0696E7]/50 transition duration-300"
+                        />
+                    </div>
+                </div>
+
+                 {/* Live link */}
+                 <div className="flex-1">
                         <label className="text-white mb-2 block">Live Project Link</label>
                         <input
                             {...register("liveLink")}
@@ -190,7 +202,6 @@ const AddNewProject = () => {
                             className="outline-none bg-[#0E1330] border border-[#282D45] rounded-[10px] py-3 px-5 w-full text-white focus:border-[#0696E7]/50 transition duration-300 "
                         />
                     </div>
-                </div>
 
 
                 <div className="flex gap-4 w-full">
@@ -246,7 +257,7 @@ const AddNewProject = () => {
                     <input
                         onKeyDown={handleKeyDown}
                         {...register("features")}
-                        placeholder="Enter project features (comma-separated)"
+                        placeholder="Enter project features (type & enter)"
                         type="text"
                         className="outline-none bg-[#0E1330] border border-[#282D45] rounded-[10px] py-3 px-5 w-full text-white focus:border-[#0696E7]/50 transition duration-300"
                     />
@@ -317,6 +328,7 @@ const AddNewProject = () => {
                     ))}
                 </div>
 
+                <div className="flex justify-end">
                 <Ripples during={1500}>
                     <button
                         type="submit"
@@ -325,6 +337,7 @@ const AddNewProject = () => {
                         Submit
                     </button>
                 </Ripples>
+                </div>
             </form>
         </div>
     );
