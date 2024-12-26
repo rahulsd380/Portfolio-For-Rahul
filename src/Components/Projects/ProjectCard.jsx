@@ -53,7 +53,7 @@ const ProjectCard = ({ project }) => {
           </span>
         </h1>
 
-        <img src={images[0]} alt="" className="rounded-xl" />
+        <img src={images[0]} alt="" className="rounded-xl h-[350px]" />
 
         <h1>
           <span className="text-white font-Montserrat text-base font-semibold">

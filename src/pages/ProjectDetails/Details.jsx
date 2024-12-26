@@ -11,7 +11,6 @@ import { IoTimerOutline } from "react-icons/io5";
 import { BiCategory } from "react-icons/bi";
 
 const Details = ({ projectDetails }) => {
-    console.log(projectDetails);
 
     const { overview, duration, features, sourceCode, liveLink, technologyNames, category, projectType } = projectDetails?.data;
 

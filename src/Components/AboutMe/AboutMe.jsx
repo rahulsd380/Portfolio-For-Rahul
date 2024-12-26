@@ -1,4 +1,5 @@
-import aboutMe from "../../assets/Images/about me.png"
+// import aboutMe from "../../assets/Images/about me.png"
+import aboutMe from "../../assets/Images/Services/rahul.png"
 import arrow from "../../assets/Images/arrowImg.png"
 import Ripples from 'react-ripples'
 

@@ -8,7 +8,7 @@ import AboutMe from "./../../Components/AboutMe/AboutMe";
 import ShortResume from "./../../Components/ShortResume/ShortResume";
 import Projects from "./../../Components/Projects/Projects";
 import MyServices from "./../../Components/MyServices/MyServices";
-import Testimonials from "./../../Components/Testimonials/Testimonials";
+// import Testimonials from "./../../Components/Testimonials/Testimonials";
 import Blogs from "./../../Components/Blogs/Blogs";
 import GetInTouch from "./../../Components/GetInTouch/GetInTouch";
 import Education from "../../Components/Education/Education";
@@ -45,7 +45,7 @@ const Home = () => {
           </div>
           <Projects />
           <MyServices />
-          <Testimonials />
+          {/* <Testimonials /> */}
           <Blogs />
           <GetInTouch />
         {/* </SmoothScroll> */}

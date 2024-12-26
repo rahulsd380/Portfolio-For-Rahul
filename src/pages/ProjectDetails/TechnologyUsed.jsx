@@ -3,7 +3,7 @@
 const TechnologyUsed = ({ technologyLogos }) => {
     console.log(technologyLogos);
     return (
-        <div className="flex items-center gap-5">
+        <div className="flex flex-wrap items-center gap-10">
             {
                 technologyLogos?.map((technologyLogo, index) =>
                     <img key={index} src={technologyLogo} alt="" className="size-20" />

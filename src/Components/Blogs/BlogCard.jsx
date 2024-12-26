@@ -4,6 +4,7 @@ import comment from "../../assets/Icons/New folder/comment.svg";
 import like from "../../assets/Icons/New folder/like.svg";
 import commentimg from "../../assets/Images/commentimg.svg";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 
 const BlogCard = () => {
   const blogDetails = [
@@ -71,14 +72,14 @@ const BlogCard = () => {
           <p className="font-Poppins text-base font-normal text-[#939393] px-5">
             {detail?.description}
           </p>
-          {/* <Link to={"/blog"} className="font-Poppins text-base font-semibold text-[#0696E7] underline px-5 transition duration-300 transform hover:-translate-y-0.5 flex items-center gap-2 pb-5 w-[157px]">
+          <Link to={"/blog"} className="font-Poppins text-base font-semibold text-[#0696E7] underline px-5 transition duration-300 transform hover:-translate-y-0.5 flex items-center gap-2 pb-5 w-[157px]">
             Read more
             <img className="w-5" src={rihtArrow} alt="" />
-          </Link> */}
-          <button onClick={() => setIsModakOpen(!isModalOpen)} className="font-Poppins text-base font-semibold text-[#0696E7] underline px-5 transition duration-300 transform hover:-translate-y-0.5 flex items-center gap-2 pb-5 w-[157px]">
+          </Link>
+          {/* <button onClick={() => setIsModakOpen(!isModalOpen)} className="font-Poppins text-base font-semibold text-[#0696E7] underline px-5 transition duration-300 transform hover:-translate-y-0.5 flex items-center gap-2 pb-5 w-[157px]">
             Read more
             <img className="w-5" src={rihtArrow} alt="" />
-          </button>
+          </button> */}
         </div>
       ))}
 
