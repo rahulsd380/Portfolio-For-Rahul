@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "/project-details/:id",
         element: <ProjectDetails />,
-        loader: ({ params }) => fetch(`http://localhost:5000/api/v1/projects/${params.id}`)
+        loader: ({ params }) => fetch(`https://portfolio-for-rahul-server/api/v1/projects/${params.id}`)
       },
     ]
   },

@@ -33,7 +33,7 @@ export const router = createBrowserRouter([
         element: <ProjectDetails />,
         loader: ({ params }) =>
           fetch(
-            `http://localhost:5000/api/v1/professional-skills/${params.id}`
+            `https://portfolio-for-rahul-server/api/v1/professional-skills/${params.id}`
           ),
       },
     ],
