@@ -2,9 +2,6 @@ import AnimatedCursor from 'react-animated-cursor'
 import './App.css'
 
 function App() {
-
-  
-
   return (
     <>
         <AnimatedCursor
